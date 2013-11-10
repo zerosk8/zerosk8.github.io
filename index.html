@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Probando ready de jQuery</title>
+        <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+        
+        <!-- Necesario para JQuery UI: hoja de estilos, JQuery y JQuery UI -->
+        <link href="./jquery-ui-1.10.3.custom/css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+        <script src="./jquery-ui-1.10.3.custom/js/jquery-1.9.1.js"></script>
+        <script src="./jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js"></script>
+    </head>
+    
+    <body>
+        <h2>Título de <i>cabacera 1</i></h2>
+        <p>En un lugar de la <i>Mancha</i> de cuyo nombre no quiero acordarme,</p>
+        
+        <h2>Título de <i>cabacera 2</i></h2>
+        <p>no ha mucho tiempo que vivía un <i>hidalgo</i> de los de <i>lanza en astillero</i>,</p>
+        
+        <h2>Título de <i>cabacera 3</i></h2>
+        <p>adarga antigua, rocín flaco y galgo corredor.</p>
+        
+        <h2>Título de <i>cabacera 4</i></h2>
+        <p>Una <i>olla</i> de algo <i>más vaca que carnero</i>, salpicón las más noches,</p>
+        
+        <p id = 'contenido_cabeceras' style = 'font-weight: bold;'></p>
+        <p id = 'numero_cabeceras' style = 'font-weight: bold;'></p>
+        <p id = 'primeras_palabras' style = 'font-weight: bold;'></p>
+        
+        <!-- Bloque 1: Contar cabeceras H2, obtener contenidos de cabeceras H2 y obtener las primeras palabras de los parrafos P -->
+        <script type = 'text/javascript'>
+            var contenido = '';
+            var parrafos = '';
+            var cuenta = 0;
+            
+            $('h2').each(function()
+            {
+                contenido += this.textContent + ' - ';
+                cuenta++;
+            });
+            
+            $('p:not([id])').each(function()
+            {
+                parrafos += this.textContent.split(' ')[0] + ' - ';
+            });
+            
+            $('#contenido_cabeceras').html('Las cabeceras H2 son: ' + contenido);
+            $('#numero_cabeceras').html('El numero de cabeceras H2 es ' + cuenta);
+            $('#primeras_palabras').html('Las primeras palabras de los parrafos P son: ' + parrafos);
+        </script>
+        
+        <!-- Bloque 2: Cambiar el color y forma del texto en cursiva, que no se encuentre en elementos de cabecera H2 -->
+        <script type = 'text/javascript'>
+            $('p i').css({'font-weight':'bold','color':'red'});
+        </script>
+        
+        <!-- Bloque 3: Añadir un atributo de clase y el texto "Tema x" a las cabeceras H2 -->
+        <script type = 'text/javascript'>
+            var tema = 1;
+            
+            /* Forma 1: Javascript USANDO JQuery */
+            
+            $('h2').addClass('cabecera_h2');
+            $('h2').each(function()
+            {
+                $(this).prepend('Tema ' + tema + ': ');
+                tema++;
+            });
+            
+            /* Forma 2: Javascript SIN USAR JQuery */
+            
+            /*var cabeceras = document.getElementsByTagName('h2');
+            
+            for(var i = 0; i < cabeceras.length; i++)
+            {
+                cabeceras[i].innerHTML = 'Tema ' + tema + ': ' + cabeceras[i].textContent;
+                tema++;
+            }*/
+        </script>
+        
+        <!-- Bloque 4: Añadir automaticamente anclas a las cabeceras, y añadir a cada ancla un texto con el enlace al que apunta -->
+        <script type = 'text/javascript'>
+            var numero = 1;
+            
+            function anclas()
+            {
+                $(this).append(' (<a name = \'cabecera_' + numero + '\' href = \'#cabecera_' + numero + '\'>#</a>)');
+                numero++;
+            }
+            
+            $('h2').each(anclas);
+            
+            $('h2 a').on('mouseover',function(event)
+            {
+                $(this).prepend(document.URL.split('#')[0] + $(this).attr('href') + ' ');
+            });
+            
+            $('h2 a').on('mouseleave',function(event)
+            {
+                $(this).text('#');
+            });
+        </script>
+        
+        <h2>Título de relleno</h2>
+        <p>Contenido de relleno</p>
+        
+        <h2>Título de relleno</h2>
+        <p>Contenido de relleno</p>
+        
+        <h2>Título de relleno</h2>
+        <p>Contenido de relleno</p>
+        
+        <h2>Título de relleno</h2>
+        <p>Contenido de relleno</p>
+        
+        <h2>Título de relleno</h2>
+        <p>Contenido de relleno</p>
+        
+        
+        <!-- Bloque 5: Crear un menu con un "tooltip" que pueda activase y desactivarse -->
+        <div style = 'height: 250px;'>
+            <h2>Menu con Tooltip (<span style = 'font-size: smaller; border: 1px black solid; border-radius: 5px 5px;' id = 'interruptor_tooltip'>
+                    Ocultar "tooltip"
+                </span>
+                )
+            </h2>
+            <ul id = 'menu' style = 'float:left; list-style-type: none; height: 150px; width: 100px; padding-left: 0px; margin-left: 10px;'>
+                <li id = 'opcion_1' style = 'border: 1px black solid; height: 25px; 
+                            text-align: center; padding-top: 5px; border-radius: 5px 5px; background-color: #367c2b;'>
+                    <a href = '#cabecera_1' style = 'text-decoration: none; color: black;'>Tema 1</a>
+                </li>
+                
+                <li id = 'opcion_2' style = 'border: 1px black solid; height: 25px; 
+                            text-align: center; padding-top: 5px; border-radius: 5px 5px; margin-top: 5px; background-color: #00adee;'>
+                    <a href = '#cabecera_2' style = 'text-decoration: none; color: black;'>Tema 2</a>
+                </li>
+                
+                <li id = 'opcion_3' style = 'border: 1px black solid; height: 25px; 
+                            text-align: center; padding-top: 5px; border-radius: 5px 5px; margin-top: 5px; background-color: #f63724;'>
+                    <a href = '#cabecera_3' style = 'text-decoration: none; color: black;'>Tema 3</a>
+                </li>
+                
+                <li id = 'opcion_4' style = 'border: 1px black solid; height: 25px; 
+                            text-align: center; padding-top: 5px; border-radius: 5px 5px; margin-top: 5px; background-color: #ea9434;'>
+                    <a href = '#cabecera_4' style = 'text-decoration: none; color: black;'>Tema 4</a>
+                </li>
+            </ul>
+            
+            <p id = 'tooltip' style = 'display: none; float:left; border: 1px grey solid; width: 100px; 
+                                    margin-left: 10px; padding: 10px 10px 10px 10px; background-color: #fff5a2; border-radius: 5px 5px;'>
+            </p>
+        </div>
+        
+        <script type = 'text/javascript'>
+            var mostrar_tooltip = true;
+            
+            function ToggleTooltip(event)
+            {
+                if(mostrar_tooltip == true)
+                {
+                    mostrar_tooltip = false;
+                    $(this).text('Mostrar "tooltip"');
+                }
+                else
+                {
+                    mostrar_tooltip = true;
+                    $(this).text('Ocultar "tooltip"');
+                }
+            }
+            
+            $('#interruptor_tooltip').on('click',ToggleTooltip);
+            
+            $('#menu #opcion_1').hover(function(event)
+            {
+                if(mostrar_tooltip == true)
+                {
+                    $('#tooltip').text('Al hacer click en este botón, se accede a la cabecera del "Tema 1".');
+                    $('#tooltip').fadeIn();
+                }
+                
+                return false;
+            },
+            function(event)
+            {
+                if(mostrar_tooltip == true)
+                {
+                    $('#tooltip').fadeOut();
+                }
+                
+                return false;
+            });
+            
+            $('#menu #opcion_2').hover(function(event)
+            {
+                if(mostrar_tooltip == true)
+                {
+                    $('#tooltip').text('Al hacer click en este botón, se accede a la cabecera del "Tema 2".');
+                    $('#tooltip').fadeIn();
+                }
+                
+                return false;
+            },
+            function(event)
+            {
+                if(mostrar_tooltip == true)
+                {
+                    $('#tooltip').fadeOut();
+                }
+                
+                return false;
+            });
+            
+            $('#menu #opcion_3').hover(function(event)
+            {
+                if(mostrar_tooltip == true)
+                {
+                    $('#tooltip').text('Al hacer click en este botón, se accede a la cabecera del "Tema 3".');
+                    $('#tooltip').fadeIn();
+                }
+                
+                return false;
+            },
+            function(event)
+            {
+                if(mostrar_tooltip == true)
+                {
+                    $('#tooltip').fadeOut();
+                }
+                
+                return false;
+            });
+            
+            $('#menu #opcion_4').hover(function(event)
+            {
+                if(mostrar_tooltip == true)
+                {
+                    $('#tooltip').text('Al hacer click en este botón, se accede a la cabecera del "Tema 4".');
+                    $('#tooltip').fadeIn();
+                }
+                
+                return false;
+            },
+            function(event)
+            {
+                if(mostrar_tooltip == true)
+                {
+                    $('#tooltip').fadeOut();
+                }
+                
+                return false;
+            });
+        </script>
+        
+        <!-- Bloque 7/8: Crear un acordeon en JQuery UI -->
+        <!-- Cómo empezar con JQuery UI: http://learn.jquery.com/jquery-ui/getting-started/ -->
+        <div id = 'acordeon' style = 'width: 50%; float: bottom; padding: 0px 0px 30px 10px; font-size: smaller;'>
+            <h3>Cabecera 1 de acordeon</h3>
+            <div>Contenido 1</div>
+            
+            <h3>Cabecera 2 de acordeon</h3>
+            <div>Contenido 2</div>
+            
+            <h3>Cabecera 3 de acordeon</h3>
+            <div>Contenido 3</div>
+            
+            <h3>Cabecera 4 de acordeon</h3>
+            <div>Contenido 4</div>
+        </div>
+        
+        <script>
+            $('#acordeon').accordion();
+        </script>
+    </body>
+</html>
