@@ -212,8 +212,8 @@
         $("#tabla").fadeIn("slow");
     });
     
-    $("#tabla table").append("<tr><td></td><td class = 'celda_valor celda_remarcable'>0</td></tr>");
-    $("#tabla table").append("<tr><td></td><td class = 'celda_valor celda_remarcable'>1</td></tr>");
+    $("#tabla table").append("&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td class = 'celda_valor celda_remarcable'&gt;0&lt;/td&gt;&lt;/tr&gt;");
+    $("#tabla table").append("&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td class = 'celda_valor celda_remarcable'&gt;1&lt;/td&gt;&lt;/tr&gt;");
     
     var valor_previo = 0, i = 1, temp;
     
@@ -223,12 +223,12 @@
         i = i + valor_previo;
         valor_previo = temp;
         
-        $("#tabla table").append("<tr><td></td><td class = 'celda_valor celda_remarcable'>" + i  + "</td></tr>");
+        $("#tabla table").append("&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td class = 'celda_valor celda_remarcable'&gt;" + i  + "&lt;/td&gt;&lt;/tr&gt;");
     }
     
-    $("#tabla table").append("<tr><th>Suma Total</th><td class = 'celda_remarcable' id = 'resultado_suma'></td></tr>");
-    $("#tabla table").append("<tr><th>Media</th><td class = 'celda_remarcable' id = 'resultado_media'></td></tr>");
-    $("#tabla table").append("<tr><th>Mediana</th><td class = 'celda_remarcable' id = 'resultado_mediana'></td></tr>");
+    $("#tabla table").append("&lt;tr&gt;&lt;th&gt;Suma Total&lt;/th&gt;&lt;td class = 'celda_remarcable' id = 'resultado_suma'&gt;&lt;/td&gt;&lt;/tr&gt;");
+    $("#tabla table").append("&lt;tr&gt;&lt;th&gt;Media&lt;/th&gt;&lt;td class = 'celda_remarcable' id = 'resultado_media'&gt;&lt;/td&gt;&lt;/tr&gt;");
+    $("#tabla table").append("&lt;tr&gt;&lt;th&gt;Mediana&lt;/th&gt;&lt;td class = 'celda_remarcable' id = 'resultado_mediana'&gt;&lt;/td&gt;&lt;/tr&gt;");
     
     $("#boton_suma").mouseover(function()
     {
