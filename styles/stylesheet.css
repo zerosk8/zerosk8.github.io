@@ -1,0 +1,245 @@
+.btn {
+    text-transform: none;
+}
+
+.invisible {
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.classRoundNavigationLink {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    border-radius: 2rem;
+}
+
+.classCategoriesList span {
+    border-radius: 2rem;
+    cursor: auto;
+}
+
+.classCategoriesListInCardBody span {
+    padding: 5px 10px !important;
+}
+
+.classDescriptionContainer .classDescriptionParagraph.collapse {
+    display: block;
+    height: 100px;
+    overflow: hidden;
+}
+
+.classDescriptionContainer .classDescriptionParagraph.collapsing {
+    height: 100px;
+}
+
+.classDescriptionContainer .classDescriptionParagraph.collapse.show {
+    height: auto;
+}
+
+.classShowHideDescriptionButton {
+    border-radius: 2rem;
+}
+
+.classRoundedTopRightFloatingButton {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    padding: 5px 0 0 0;
+	width: 55px;
+	height: 55px;
+    border-radius: 2rem;
+    z-index: 1000;
+}
+
+.classRoundedBottomRightFloatingButton {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    padding: 5px 0 0 0;
+	width: 55px;
+	height: 55px;
+    border-radius: 2rem;
+    z-index: 1000;
+}
+
+.classFloatingBottomButton {
+    position: fixed;
+    bottom: 10px;
+    right: 0.5%;
+    width: 97% !important;
+    z-index: 2000;
+}
+
+#idEditUserProfileButton {
+    background-color: white;
+}
+
+/* Please keep this margin and do not try to perform with my-* Bootstrap classes */
+#idUserProfilePictureContainer {
+    margin-top: 62px;
+}
+
+#idUserProfilePictureContainer img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+}
+
+#idSearchLocalNavigationBar {
+    margin-top: 61px;
+}
+
+#idSearchLocalNavigationBar a {
+    border-bottom: 5px solid #1d2124;
+}
+
+#idSearchLocalNavigationBar a.classSelectedNavigationItem {
+    border-bottom: 5px solid !important;
+}
+
+/* Please keep this margin and do not try to perform with my-* Bootstrap classes */
+#idSearchLocalMain {
+    margin-top: 124px;
+    margin-bottom: 62px;
+}
+
+#idMainNavigationBar a:not(.classSelectedNavigationItem) span {
+    visibility: hidden;
+}
+
+#idSearchLocalMapContainer {
+    margin: 0;
+    padding: 0;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (min-height: 270px) and (max-height: 371.98px) {
+    #idSearchLocalMapContainer {
+        height: 200px;
+    }
+}
+@media (min-height: 372px) and (max-height: 473.98px) {
+    #idSearchLocalMapContainer {
+        height: 300px;
+    }
+}
+@media (min-height: 474px) and (max-height: 575.98px) {
+    #idSearchLocalMapContainer {
+        height: 400px;
+    }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-height: 576px) and (max-height: 767.98px) {
+    #idSearchLocalMapContainer {
+        height: 500px;
+    }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-height: 768px) and (max-height: 991.98px) {
+    #idSearchLocalMapContainer {
+        height: 700px;
+    }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-height: 992px) and (max-height: 1199.98px) {
+    #idSearchLocalMapContainer {
+        height: 900px;
+    }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-height: 1200px) {
+    #idSearchLocalMapContainer {
+        height: 1000px;
+    }
+}
+
+.classHorizontalListRow {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.classHorizontalListCol {
+    flex: 0 0 auto;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 720px) {
+    .classHorizontalListCol .card-body {
+        min-height: 150px;
+    }
+}
+@media screen and (min-width: 720px) {
+    .classHorizontalListCol .card-body {
+        min-height: 195px;
+    }
+}
+
+#idFilterCategoriesModal .modal-content {
+    background-color: rgba(0,0,0,0.8) !important;
+}
+
+#idFilterCategoriesModal .filterOfferButton, #idFilterCategoriesModal .filterEventButton,
+#idFilterCategoriesModal .filterCategorieButton {
+    border: 2px solid !important;
+}
+
+#idFilterCategoriesModal .filterOfferButton:not([disabled]), 
+#idFilterCategoriesModal .filterEventButton:not([disabled]) {
+    color: #2e2e2e !important;
+    border: 0 !important;
+}
+
+#idFilterCategoriesModal .filterCategorieButton[disabled] {
+    background-color: rgba(0,0,0,0) !important;
+}
+
+#idFilterCategoriesModal .filterCategorieButton:not([disabled]) {
+    color: #2e2e2e !important;
+    background-color: white !important;
+}
+/* Please keep this margin and do not try to perform with my-* Bootstrap classes */
+#idLocalHeaderImage {
+    margin-top: 56px;
+    max-height: 300px;
+}
+
+#idLocalNameInDescription {
+    font-size: 120%;
+}
+
+#idLocalNavigationBar a {
+    border-bottom: 5px solid #e0e0e0;
+}
+
+#idLocalNavigationBar a.classSelectedNavigationItem {
+    border-bottom: 5px solid !important;
+}
+
+#idLocalMapContainer {
+    height: 300px;
+}
+
+#idLocalRecommendationContainer #idLocalViewSocialButtonsList {
+    position: absolute;
+    margin-top: 75px;
+    background: white;
+    z-index: 1;
+}
+
+#idLocalRecommendationContainer #idLocalViewSocialButtonsList a {
+    border-radius: 10rem;
+}
+
+#idLocalRecommendationContainer > img {
+    position: relative;
+    max-height: 300px;
+}
+
+#idNumericDaysOfTheMonthRow p.classSelectedNavigationItem {
+    color: white;
+    background: #1d2124;
+    border-radius: 2rem;
+}
