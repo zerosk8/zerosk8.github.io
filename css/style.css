@@ -1,0 +1,170 @@
+html, body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+pre
+{
+    overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    /* width: 99%; */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+p, pre
+{
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+}
+
+span.boton
+{
+    display: block;
+    background: none repeat scroll 0% 0% rgb(65, 98, 168);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(56, 83, 140) rgb(31, 45, 77) rgb(21, 30, 51);
+    border-radius: 4px;
+    box-shadow: 0px 1px 10px 1px rgb(92, 139, 238) inset, 0px 1px 0px rgb(29, 44, 77), 0px 6px 0px rgb(31, 48, 83), 0px 8px 4px 1px rgb(17, 17, 17);
+    color: rgb(255, 255, 255);
+    font: bold 20px/1 "helvetica neue",helvetica,arial,sans-serif;
+    margin-bottom: 10px;
+    padding: 10px 0px 12px;
+    text-align: center;
+    text-shadow: 0px -1px 1px rgb(30, 45, 77);
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#banda_izquierda, #banda_derecha
+{
+    height: 100%;
+    min-height: 5500px;
+    max-width: 125px;
+    width: 10%;
+    margin: 0;
+    padding: 0;
+    float: left;
+    background-repeat: repeat;
+    background-image: url('./recorte_izquierdo2.png');
+}
+
+#banda_derecha
+{
+    float: right;
+    background-image: url('./recorte_derecho2.png');
+}
+
+#cuerpo
+{
+    height: 100%;
+    width: 75%;
+    float: left;
+    padding: 10px 10px 10px 10px;
+}
+
+#cuerpo div
+{
+/*     height: 100%; */
+    box-shadow: 0px 20px 40px rgba(0,0,0,0.1);
+    margin-top: 5px;
+    padding: 0px 10px 10px 10px;
+    border-radius: 5px;
+}
+
+#cuerpo h1
+{
+    background-color: rgb(238, 67, 46);
+    background: -moz-linear-gradient(center top , rgb(238, 67, 46) 0%, rgb(198, 57, 41) 40%, rgb(181, 23, 0) 50%, rgb(137, 17, 0) 100%);
+    background: -webkit-linear-gradient(270deg , rgb(238, 67, 46) 0%, rgb(198, 57, 41) 40%, rgb(181, 23, 0) 50%, rgb(137, 17, 0) 100%);
+    background: linear-gradient(180deg , rgb(238, 67, 46) 0%, rgb(198, 57, 41) 40%, rgb(181, 23, 0) 50%, rgb(137, 17, 0) 100%);
+    border: 1px solid rgb(149, 17, 0);
+    border-radius: 5px;
+    box-shadow: 0px 0px 0px 1px rgba(255, 115, 100, 0.4) inset, 0px 3px 3px rgb(51, 51, 51);
+    color: white;
+    font: bold 20px/1 "helvetica neue",helvetica,arial,sans-serif;
+    padding: 12px 0px 14px;
+    text-align: center;
+    text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.8);
+}
+
+#cuerpo h1 a
+{
+    text-decoration: none;
+    color: white;
+}
+
+#cuerpo h2
+{
+/*     width: 50%; */
+    background-color: rgb(127, 191, 77);
+    background: -moz-linear-gradient(center top , rgb(127, 191, 77) 20%, rgb(99, 166, 47) 50%);
+    background: -webkit-linear-gradient(270deg , #7FBF4D 40%, #63A62F 70%);
+    background: linear-gradient(180deg , #7FBF4D 40%, #63A62F 70%);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(99, 166, 47) rgb(99, 166, 47) rgb(91, 153, 43);
+    border-image: none;
+    border-radius: 3px;
+    box-shadow: 0px 0px 0px 1px rgba(255, 115, 100, 0.4) inset, 0px 3px 3px rgb(51, 51, 51);
+    color: rgb(255, 255, 255);
+    font: 20px/1 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    padding: 7px 20px 8px;
+    text-align: left;
+    text-shadow: 0px -1px 0px rgb(76, 144, 33);
+}
+
+#cuerpo h2 a
+{
+    text-decoration: none;
+    color: white;
+}
+
+#activador
+{
+    box-shadow: 0px 1px 0px rgb(29, 44, 77), 0px 2px 4px 1px rgb(17, 17, 17);
+}
+
+#tabla
+{
+    display: none;
+}
+
+#tabla table
+{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto; 
+    border: 1px solid black;
+}
+
+#tabla table td.celda_remarcable
+{
+    height: 20px;
+    border: 1px solid black;
+    padding: 5px 0 5px 0;
+    text-align: center;
+}
+
+#tabla #operaciones
+{
+    min-height: 100px;
+    height: 100px;
+/*     width: 100%; */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#tabla #operaciones span
+{
+    float: left;
+    margin: 20px 0 20px 10%;
+}
