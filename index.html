@@ -1,566 +1,89 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <meta http-equiv = "Content-Type" content = "text/html; charset = utf-8">
-        <title>Programa en JQuery</title>
-        <link rel = "stylesheet" href = "./css/style.css">
-        <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    </head>
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS, MDBootstrap CSS, Material Design Icons and Font Awesome Icons -->
+    <link rel="stylesheet" href="./styles/material-design-for-bootstrap-free-4.5.10/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/material-design-for-bootstrap-free-4.5.10/css/mdb.min.css">
+    <link rel="stylesheet" href="./styles/fontawesome-free-5.3.1-web/css/all.min.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" 
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" 
+    crossorigin=""/>
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="./styles/stylesheet.css">
+    <title>WhatsOn PWA</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand fixed-top navbar-dark bg-dark text-white" id="idMainMenuBar">
+            <ul class="navbar-nav w-100">
+                <li class="nav-item mr-auto pl-5"><h2><small>Granada</small></h2></li>
+                <li class="nav-item">
+                    <a class="nav-link classRoundNavigationLink" title="Buscar" aria-label="Buscar">
+                        <i class="fas fa-search fa-sm"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link classRoundNavigationLink" title="Más acciones" 
+                    aria-label="Más acciones">
+                        <i class="fas fa-ellipsis-v fa-sm"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main role="main"></main>
+    <nav class="navbar navbar-expand mb-0 pb-0 fixed-bottom navbar-dark bg-dark text-white" 
+    id="idMainNavigationBar">
+        <ul class="navbar-nav w-100 nav-justified">
+            <li class="nav-item">
+                <a class="nav-link d-flex flex-column" title="Perfil de usuario" 
+                aria-label="Perfil de usuario" 
+                onclick="setNavigationItemAsSelectedInNavigationBar(HTML_ID_MAIN_NAVIGATION_BAR,this);
+                loadUserProfileView();">
+                    <i class="fas fa-user-circle fa-lg"></i>
+                    <span class="mt-2">Perfil</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex flex-column" title="Búsqueda de locales" 
+                aria-label="Búsqueda de locales" 
+                onclick="setNavigationItemAsSelectedInNavigationBar(HTML_ID_MAIN_NAVIGATION_BAR,this); 
+                loadSearchLocalView();">
+                    <i class="fas fa-search fa-lg"></i>
+                    <span class="mt-2">Búsqueda</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex flex-column" title="Eventos de locales" 
+                aria-label="Eventos de locales" 
+                onclick="setNavigationItemAsSelectedInNavigationBar(HTML_ID_MAIN_NAVIGATION_BAR,this)">
+                    <i class="far fa-calendar fa-lg"></i>
+                    <span class="mt-2">Eventos</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
     
-    <body>
-        <div id = "banda_izquierda"></div>
-        
-        <div id = "cuerpo">
-            <div id = "ejercicio_1">
-                <h1>Navegando entre las cabeceras</h1>
-                <p>En este ejercicio se editarán las cabeceras cuya etiqueta es "h1" y "h2", de manera que puedan incluirse elementos
-                    que permitan la navegación de una cabecera a la otra. Además, se generará, de forma automática, un identificador para cada
-                    cabecera.
-                </p>
-                
-                <h2>Enunciado del ejercicio</h2>
-                <p>En un texto que incluya diferentes etiquetas H2, añadir contenido para navegar de cada una a la siguientes, incluyendo un 
-                    botón que desconecte esta funcionalidad (o la cambie).
-                </p>
-                
-                <h2>Actividades adicionales</h2>
-                <p>
-                    <ul>
-                        <li>Hacer lo mismo con las cabeceras cuya etiqueta es "h1", de manera que pueda navegarse a las cabeceras anteriores y posteriores de
-                            tipo "h1".
-                        </li>
-                        
-                        <li>Añadir, de manera automática, un identificador a cada cabecera de etiqueta "h1" y "h2".
-                        </li>
-                        
-                        <li>Añadir, de manera automática, un ancla ("anchor") a las cabeceras de etiqueta "h1" y "h2".
-                        </li>
-                    </ul>
-                </p>
-                
-                <h2>Activar/Desactivar la navegación</h2>
-                <p>El siguiente botón sirve para activar o desactivar la navegación entre cabeceras del documento.
-                    <br><br>
-                    <span class = "boton" id = "activador">Desactivar</span>
-                </p>
-                
-                <h2>Algoritmo propuesto</h2>
-                <pre>
-    var ejercicio = 1;
-    var apartado;
-    var mostrar_navegacion = true;
-    
-    $("h1").each(function()
-    {
-        $(this).prepend("Ejercicio " + ejercicio + ": ");
-        $(this).append(" &lt;a name = \"ejercicio_" + ejercicio + "\" href = \"#ejercicio_" 
-                        + ejercicio + "\"&gt;(#)&lt;/a&gt;");
-        
-        apartado = 1;
-        $(this).nextAll("h2").each(function()
-        {
-            $(this).prepend("Apartado " + apartado + ": ");
-            $(this).append(" &lt;a name = \"ejercicio_" + ejercicio + "_apartado_" + apartado + "\" href = \"#ejercicio_" + ejercicio + "_apartado_" + apartado + "\"&gt;(#)&lt;/a&gt;");
-            apartado++;
-        });
-        
-        ejercicio++;
-    });
-    
-    $("h1").each(function()
-    {
-        var sig_cabecera_h1 = $(this).parent().next().children("h1").first();
-        var ant_cabecera_h1 = $(this).parent().prev().children("h1").first();
-        var ancla1, ancla2;
-        var navegacion = '';
-        
-        if(ant_cabecera_h1.length &gt; 0 && sig_cabecera_h1.length &gt; 0)
-        {
-            ancla1 = $(ant_cabecera_h1).children().last();
-            ancla2 = $(sig_cabecera_h1).children().last();
-            
-            navegacion = "&lt;a href = '#" + $(ancla1).attr("name") + "'&gt;(^ &lt;/a&gt;&lt;a href = '#" + $(ancla2).attr("name") + "'&gt;| v)&lt;/a&gt; ";
-        }
-        else if(ant_cabecera_h1.length &gt; 0)
-        {
-            ancla1 = $(ant_cabecera_h1).children().last();
-            
-            navegacion = "&lt;a href = '#" + $(ancla1).attr("name") + "'&gt;(^)&lt;/a&gt; ";
-        }
-        else if(sig_cabecera_h1.length &gt; 0)
-        {
-            ancla1 = $(sig_cabecera_h1).children().last();
-            
-            navegacion = "&lt;a href = '#" + $(ancla1).attr("name") + "'&gt;(v)&lt;/a&gt; ";
-        }
-        
-        $(this).prepend(navegacion);
-    }
-    );
-    
-    $("h2").each(function()
-    {
-        var sig_cabeceras_h2 = $(this).nextAll("h2");
-        var ant_cabeceras_h2 = $(this).prevAll("h2");
-        var ancla1, ancla2;
-        var navegacion = '';
-        
-        
-        if(ant_cabeceras_h2.length &gt; 0 && sig_cabeceras_h2.length &gt; 0)
-        {
-            ancla1 = $(ant_cabeceras_h2[0]).children().last();
-            ancla2 = $(sig_cabeceras_h2[0]).children().last();
-            
-            navegacion = "&lt;a href = '#" + $(ancla1).attr("name") + "'&gt;(^ &lt;/a&gt;&lt;a href = '#" + $(ancla2).attr("name") + "'&gt;| v)&lt;/a&gt; ";
-        }
-        else if(ant_cabeceras_h2.length &gt; 0)
-        {
-            ancla1 = $(ant_cabeceras_h2[0]).children().last();
-            
-            navegacion = "&lt;a href = '#" + $(ancla1).attr("name") + "'&gt;(^)&lt;/a&gt; ";
-        }
-        else if(sig_cabeceras_h2.length &gt; 0)
-        {
-            ancla1 = $(sig_cabeceras_h2[0]).children().last();
-            
-            navegacion = "&lt;a href = '#" + $(ancla1).attr("name") + "'&gt;(v)&lt;/a&gt; ";
-        }
-        
-        $(this).prepend(navegacion);
-    });
-    
-    $("#activador").on("mouseover",
-    function()
-    {
-        $(this).css("cursor","pointer");
-    });
-    
-    function ActivarDesactivarNavegacion(event)
-    {
-        if(mostrar_navegacion == true)
-        {
-            mostrar_navegacion = false;
-            $(this).text("Activar");
-            $(this).css("box-shadow","0px 1px 10px 1px rgb(92, 139, 238) inset, 0px 1px 0px rgb(29, 44, 77), 0px 6px 0px rgb(31, 48, 83), 0px 8px 4px 1px rgb(17, 17, 17)");
-            
-            $("h1 a").css("display","none");
-            $("h2 a").css("display","none");
-        }
-        else
-        {
-            mostrar_navegacion = true;
-            $(this).text("Desactivar");
-            $(this).css("box-shadow","0px 1px 0px rgb(29, 44, 77), 0px 2px 4px 1px rgb(17, 17, 17)");
-            
-            $("h1 a").css("display","inline");
-            $("h2 a").css("display","inline");
-        }
-    }
-    
-    $("#activador").on("click",ActivarDesactivarNavegacion);
-                </pre>
-            </div>
-            
-            <div id = "ejercicio_2">
-                <h1>Cálculos sobre una tabla</h1>
-                <p> En este apartado se calculará la suma total, la media y la mediana a partir los valores enteros de una tabla.
-                </p>
-                
-                <h2>Enunciado del ejercicio</h2>
-                <p>Dada una tabla que incluya valores numéricos, incluir botones para calcular sumas o cualquier otra operación y hacerlo.
-                </p>
-                
-                <h2>Actividades adicionales</h2>
-                <p>
-                    <ul>
-                        <li>Los valores de la tabla se generan de manera automática.
-                        </li>
-                    </ul>
-                </p>
-                
-                <h2>Tabla con valores</h2>
-                <p>Para mostrar la tabla desplace el ratón por encima del siguiente botón.
-                    <br><br>
-                    <span class = "boton" id = "mostrar_tabla">Mostrar tabla</span>
-                </p>
-                <div id = "tabla">
-                    <table>
-                        <tr><th></th><th>Valores</th></tr>
-                    </table>
-                    <div id = "operaciones">
-                        <span class = "boton" id = "boton_suma">Suma Total</span>
-                        <span class = "boton" id = "boton_media">Media</span>
-                        <span class = "boton" id = "boton_mediana">Mediana</span>
-                    </div>
-                </div>
-                
-                <h2>Algoritmo propuesto</h2>
-                <pre>
-    $("#mostrar_tabla").mouseover(function()
-    {
-        $(this).css("cursor","pointer");
-    })
-    .mouseup(function()
-    {
-        $(this).css("box-shadow","0px 1px 10px 1px rgb(92, 139, 238) inset, 0px 1px 0px rgb(29, 44, 77), 0px 6px 0px rgb(31, 48, 83), 0px 8px 4px 1px rgb(17, 17, 17)");
-    })
-    .mousedown(function()
-    {
-        $(this).css("box-shadow","0px 1px 0px rgb(29, 44, 77), 0px 2px 4px 1px rgb(17, 17, 17)");
-        
-        $("#tabla").fadeIn("slow");
-    });
-    
-    $("#tabla table").append("&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td class = 'celda_valor celda_remarcable'&gt;0&lt;/td&gt;&lt;/tr&gt;");
-    $("#tabla table").append("&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td class = 'celda_valor celda_remarcable'&gt;1&lt;/td&gt;&lt;/tr&gt;");
-    
-    var valor_previo = 0, i = 1, temp;
-    
-    while(i < 200)
-    {
-        temp = i;
-        i = i + valor_previo;
-        valor_previo = temp;
-        
-        $("#tabla table").append("&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td class = 'celda_valor celda_remarcable'&gt;" + i  + "&lt;/td&gt;&lt;/tr&gt;");
-    }
-    
-    $("#tabla table").append("&lt;tr&gt;&lt;th&gt;Suma Total&lt;/th&gt;&lt;td class = 'celda_remarcable' id = 'resultado_suma'&gt;&lt;/td&gt;&lt;/tr&gt;");
-    $("#tabla table").append("&lt;tr&gt;&lt;th&gt;Media&lt;/th&gt;&lt;td class = 'celda_remarcable' id = 'resultado_media'&gt;&lt;/td&gt;&lt;/tr&gt;");
-    $("#tabla table").append("&lt;tr&gt;&lt;th&gt;Mediana&lt;/th&gt;&lt;td class = 'celda_remarcable' id = 'resultado_mediana'&gt;&lt;/td&gt;&lt;/tr&gt;");
-    
-    $("#boton_suma").mouseover(function()
-    {
-        $(this).css("cursor","pointer");
-    })
-    .mouseup(function()
-    {
-        $(this).css("box-shadow","0px 1px 10px 1px rgb(92, 139, 238) inset, 0px 1px 0px rgb(29, 44, 77), 0px 6px 0px rgb(31, 48, 83), 0px 8px 4px 1px rgb(17, 17, 17)");
-    })
-    .mousedown(function()
-    {
-        $(this).css("box-shadow","0px 1px 0px rgb(29, 44, 77), 0px 2px 4px 1px rgb(17, 17, 17)");
-        
-        var suma = 0;
-        
-        $(".celda_valor").each(function()
-        {
-            suma += parseInt($(this).text());
-        });
-        
-        $("#resultado_suma").text(suma);
-    });
-    
-    
-    $("#boton_media").mouseover(function()
-    {
-        $(this).css("cursor","pointer");
-    })
-    .mouseup(function()
-    {
-        $(this).css("box-shadow","0px 1px 10px 1px rgb(92, 139, 238) inset, 0px 1px 0px rgb(29, 44, 77), 0px 6px 0px rgb(31, 48, 83), 0px 8px 4px 1px rgb(17, 17, 17)");
-    })
-    .mousedown(function()
-    {
-        $(this).css("box-shadow","0px 1px 0px rgb(29, 44, 77), 0px 2px 4px 1px rgb(17, 17, 17)");
-        
-        var num_elementos = 0, media = 0;
-        
-        $(".celda_valor").each(function()
-        {
-            num_elementos++;
-            media += parseInt($(this).text());
-        });
-        
-        media = media / num_elementos;
-        
-        $("#resultado_media").text(media.toPrecision(6));
-    });
-    
-    
-    $("#boton_mediana").mouseover(function()
-    {
-        $(this).css("cursor","pointer");
-    })
-    .mouseup(function()
-    {
-        $(this).css("box-shadow","0px 1px 10px 1px rgb(92, 139, 238) inset, 0px 1px 0px rgb(29, 44, 77), 0px 6px 0px rgb(31, 48, 83), 0px 8px 4px 1px rgb(17, 17, 17)");
-    })
-    .mousedown(function()
-    {
-        $(this).css("box-shadow","0px 1px 0px rgb(29, 44, 77), 0px 2px 4px 1px rgb(17, 17, 17)");
-        
-        var num_elementos = 0, mediana, posicion_mediana;
-        var valores = new Array;
-        
-        $(".celda_valor").each(function()
-        {
-            valores.push(parseInt($(this).text()));
-            num_elementos++;
-        });
-        
-        posicion_mediana = parseInt(num_elementos/2);
-        
-        if(num_elementos % 2 == 0)
-        {
-            mediana = (valores[posicion_mediana - 1] + valores[posicion_mediana]) / 2;
-            mediana = mediana.toPrecision(3);
-        }
-        else
-        {
-            mediana = valores[posicion_mediana];
-        }
-        
-        $("#resultado_mediana").text(mediana);
-    });
-                </pre>
-            </div>
-            
-            <script type = "text/javascript">
-                $(function()
-                {
-                    /********* Ejercicio 1 *********/
-                    
-                    var ejercicio = 1;
-                    var apartado;
-                    var mostrar_navegacion = true;
-                    
-                    $("h1").each(function()
-                    {
-                        $(this).prepend("Ejercicio " + ejercicio + ": ");
-                        $(this).append(" <a name = \"ejercicio_" + ejercicio + "\" href = \"#ejercicio_" 
-                                        + ejercicio + "\">(#)</a>");
-                        
-                        apartado = 1;
-                        $(this).nextAll("h2").each(function()
-                        {
-                            $(this).prepend("Apartado " + apartado + ": ");
-                            $(this).append(" <a name = \"ejercicio_" + ejercicio + "_apartado_" + apartado 
-                                            + "\" href = \"#ejercicio_" + ejercicio + "_apartado_" + apartado + "\">(#)</a>");
-                            apartado++;
-                        });
-                        
-                        ejercicio++;
-                    });
-                    
-                    $("h1").each(function()
-                    {
-                        var sig_cabecera_h1 = $(this).parent().next().children("h1").first();
-                        var ant_cabecera_h1 = $(this).parent().prev().children("h1").first();
-                        var ancla1, ancla2;
-                        var navegacion = '';
-                        
-                        if(ant_cabecera_h1.length > 0 && sig_cabecera_h1.length > 0)
-                        {
-                            ancla1 = $(ant_cabecera_h1).children().last();
-                            ancla2 = $(sig_cabecera_h1).children().last();
-                            
-                            navegacion = "<a href = '#" + $(ancla1).attr("name") + "'>(^ </a><a href = '#" 
-                                        + $(ancla2).attr("name") + "'>| v)</a> ";
-                        }
-                        else if(ant_cabecera_h1.length > 0)
-                        {
-                            ancla1 = $(ant_cabecera_h1).children().last();
-                            
-                            navegacion = "<a href = '#" + $(ancla1).attr("name") + "'>(^)</a> ";
-                        }
-                        else if(sig_cabecera_h1.length > 0)
-                        {
-                            ancla1 = $(sig_cabecera_h1).children().last();
-                            
-                            navegacion = "<a href = '#" + $(ancla1).attr("name") + "'>(v)</a> ";
-                        }
-                        
-                        $(this).prepend(navegacion);
-                    }
-                    );
-                    
-                    $("h2").each(function()
-                    {
-                        var sig_cabeceras_h2 = $(this).nextAll("h2");
-                        var ant_cabeceras_h2 = $(this).prevAll("h2");
-                        var ancla1, ancla2;
-                        var navegacion = '';
-                        
-                        
-                        if(ant_cabeceras_h2.length > 0 && sig_cabeceras_h2.length > 0)
-                        {
-                            ancla1 = $(ant_cabeceras_h2[0]).children().last();
-                            ancla2 = $(sig_cabeceras_h2[0]).children().last();
-                            
-                            navegacion = "<a href = '#" + $(ancla1).attr("name") + "'>(^ </a><a href = '#" 
-                                        + $(ancla2).attr("name") + "'>| v)</a> ";
-                        }
-                        else if(ant_cabeceras_h2.length > 0)
-                        {
-                            ancla1 = $(ant_cabeceras_h2[0]).children().last();
-                            
-                            navegacion = "<a href = '#" + $(ancla1).attr("name") + "'>(^)</a> ";
-                        }
-                        else if(sig_cabeceras_h2.length > 0)
-                        {
-                            ancla1 = $(sig_cabeceras_h2[0]).children().last();
-                            
-                            navegacion = "<a href = '#" + $(ancla1).attr("name") + "'>(v)</a> ";
-                        }
-                        
-                        $(this).prepend(navegacion);
-                    });
-                    
-                    $("#activador").on("mouseover",
-                    function()
-                    {
-                        $(this).css("cursor","pointer");
-                    });
-                    
-                    function ActivarDesactivarNavegacion(event)
-                    {
-                        if(mostrar_navegacion == true)
-                        {
-                            mostrar_navegacion = false;
-                            $(this).text("Activar");
-                            $(this).css("box-shadow","0px 1px 10px 1px rgb(92, 139, 238) inset, 0px 1px 0px rgb(29, 44, 77), 0px 6px 0px rgb(31, 48, 83), 0px 8px 4px 1px rgb(17, 17, 17)");
-                            
-                            $("h1 a").css("display","none");
-                            $("h2 a").css("display","none");
-                        }
-                        else
-                        {
-                            mostrar_navegacion = true;
-                            $(this).text("Desactivar");
-                            $(this).css("box-shadow","0px 1px 0px rgb(29, 44, 77), 0px 2px 4px 1px rgb(17, 17, 17)");
-                            
-                            $("h1 a").css("display","inline");
-                            $("h2 a").css("display","inline");
-                        }
-                    }
-                    
-                    $("#activador").on("click",ActivarDesactivarNavegacion);
-                    
-                    /********* Ejercicio 2 *********/
-                    
-                    $("#mostrar_tabla").mouseover(function()
-                    {
-                        $(this).css("cursor","pointer");
-                    })
-                    .mouseup(function()
-                    {
-                        $(this).css("box-shadow","0px 1px 10px 1px rgb(92, 139, 238) inset, 0px 1px 0px rgb(29, 44, 77), 0px 6px 0px rgb(31, 48, 83), 0px 8px 4px 1px rgb(17, 17, 17)");
-                    })
-                    .mousedown(function()
-                    {
-                        $(this).css("box-shadow","0px 1px 0px rgb(29, 44, 77), 0px 2px 4px 1px rgb(17, 17, 17)");
-                        
-                        $("#tabla").fadeIn("slow");
-                    });
-                    
-                    $("#tabla table").append("<tr><td></td><td class = 'celda_valor celda_remarcable'>0</td></tr>");
-                    $("#tabla table").append("<tr><td></td><td class = 'celda_valor celda_remarcable'>1</td></tr>");
-                    
-                    var valor_previo = 0, i = 1, temp;
-                    
-                    while(i < 200)
-                    {
-                        temp = i;
-                        i = i + valor_previo;
-                        valor_previo = temp;
-                        
-                        $("#tabla table").append("<tr><td></td><td class = 'celda_valor celda_remarcable'>" + i  + "</td></tr>");
-                    }
-                    
-                    $("#tabla table").append("<tr><th>Suma Total</th><td class = 'celda_remarcable' id = 'resultado_suma'></td></tr>");
-                    $("#tabla table").append("<tr><th>Media</th><td class = 'celda_remarcable' id = 'resultado_media'></td></tr>");
-                    $("#tabla table").append("<tr><th>Mediana</th><td class = 'celda_remarcable' id = 'resultado_mediana'></td></tr>");
-                    
-                    $("#boton_suma").mouseover(function()
-                    {
-                        $(this).css("cursor","pointer");
-                    })
-                    .mouseup(function()
-                    {
-                        $(this).css("box-shadow","0px 1px 10px 1px rgb(92, 139, 238) inset, 0px 1px 0px rgb(29, 44, 77), 0px 6px 0px rgb(31, 48, 83), 0px 8px 4px 1px rgb(17, 17, 17)");
-                    })
-                    .mousedown(function()
-                    {
-                        $(this).css("box-shadow","0px 1px 0px rgb(29, 44, 77), 0px 2px 4px 1px rgb(17, 17, 17)");
-                        
-                        var suma = 0;
-                        
-                        $(".celda_valor").each(function()
-                        {
-                            suma += parseInt($(this).text());
-                        });
-                        
-                        $("#resultado_suma").text(suma);
-                    });
-                    
-                    
-                    $("#boton_media").mouseover(function()
-                    {
-                        $(this).css("cursor","pointer");
-                    })
-                    .mouseup(function()
-                    {
-                        $(this).css("box-shadow","0px 1px 10px 1px rgb(92, 139, 238) inset, 0px 1px 0px rgb(29, 44, 77), 0px 6px 0px rgb(31, 48, 83), 0px 8px 4px 1px rgb(17, 17, 17)");
-                    })
-                    .mousedown(function()
-                    {
-                        $(this).css("box-shadow","0px 1px 0px rgb(29, 44, 77), 0px 2px 4px 1px rgb(17, 17, 17)");
-                        
-                        var num_elementos = 0, media = 0;
-                        
-                        $(".celda_valor").each(function()
-                        {
-                            num_elementos++;
-                            media += parseInt($(this).text());
-                        });
-                        
-                        media = media / num_elementos;
-                        
-                        $("#resultado_media").text(media.toPrecision(6));
-                    });
-                    
-                    
-                    $("#boton_mediana").mouseover(function()
-                    {
-                        $(this).css("cursor","pointer");
-                    })
-                    .mouseup(function()
-                    {
-                        $(this).css("box-shadow","0px 1px 10px 1px rgb(92, 139, 238) inset, 0px 1px 0px rgb(29, 44, 77), 0px 6px 0px rgb(31, 48, 83), 0px 8px 4px 1px rgb(17, 17, 17)");
-                    })
-                    .mousedown(function()
-                    {
-                        $(this).css("box-shadow","0px 1px 0px rgb(29, 44, 77), 0px 2px 4px 1px rgb(17, 17, 17)");
-                        
-                        var num_elementos = 0, mediana, posicion_mediana;
-                        var valores = new Array;
-                        
-                        $(".celda_valor").each(function()
-                        {
-                            valores.push(parseInt($(this).text()));
-                            num_elementos++;
-                        });
-                        
-                        posicion_mediana = parseInt(num_elementos/2);
-                        
-                        if(num_elementos % 2 == 0)
-                        {
-                            mediana = (valores[posicion_mediana - 1] + valores[posicion_mediana]) / 2;
-                            mediana = mediana.toPrecision(3);
-                        }
-                        else
-                        {
-                            mediana = valores[posicion_mediana];
-                        }
-                        
-                        $("#resultado_mediana").text(mediana);
-                    });
-                });
-            </script>
-        </div>
-        
-        <div id = "banda_derecha"></div>
-    </body>
+    <!-- JQuery, Popper.js, Bootstrap JS and MDBootstrap JS-->
+    <script src="./styles/material-design-for-bootstrap-free-4.5.10/js/jquery-3.3.1.min.js"></script>
+    <script src="./styles/material-design-for-bootstrap-free-4.5.10/js/popper.min.js" ></script>
+    <script src="./styles/material-design-for-bootstrap-free-4.5.10/js/bootstrap.min.js" ></script>
+    <script src="./styles/material-design-for-bootstrap-free-4.5.10/js/mdb.min.js"></script>
+    <!-- Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" 
+    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" 
+    crossorigin=""></script>
+    <!-- Custom scripts -->
+    <script src="./scripts/navigation.js"></script>
+    <script src="./scripts/maps.js"></script>
+    <script src="./scripts/categories-filter.js"></script>
+    <script src="./scripts/photos.js"></script>
+    <script>
+        setSelectedNavigationItemInNavigationBar(HTML_ID_MAIN_NAVIGATION_BAR,1);
+        loadSearchLocalView();
+    </script>
+</body>
 </html>
