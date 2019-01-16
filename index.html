@@ -8,103 +8,147 @@
     </head>
     <body>
         <main role="main">
-            <div class="container-fluid d-flex justify-content-center align-items-center" 
-            style="height: 30vh;">
-                <h1 style="color: white;">Quiz</h1>
-            </div>
+            <img class="img-fluid w-100" id="idBackgroundImage" style="height: 40vh; object-fit: cover;">
             <div class="container-fluid px-5">
-                <div class="progress my-4">
-                    <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" 
-                    aria-valuemax="100"></div>
+                <div class="progress my-3" style="height: 25px;">
+                    <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" 
+                    aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <h2 class="my-3" id="idQuestionHeader"></h2>
-                <div class="mb-3" id="idAnswersList">
-                    <div class="form-check mb-2">
-                        <input class="form-check-input" type="radio" name="nameAnswersRadioButtons" 
-                        id="idAnswer1" value="option1">
-                        <label class="form-check-label" for="idAnswer1">
-                            Respuesta 1
-                        </label>
-                    </div>
-                    <div class="form-check mb-2">
-                        <input class="form-check-input" type="radio" name="nameAnswersRadioButtons" 
-                        id="idAnswer2" value="option2">
-                        <label class="form-check-label" for="idAnswer2">
-                            Respuesta 2
-                        </label>
-                    </div>
-                    <div class="form-check mb-2">
-                        <input class="form-check-input" type="radio" name="nameAnswersRadioButtons" 
-                        id="idAnswer3" value="option3">
-                        <label class="form-check-label" for="idAnswer3">
-                            Respuesta 3
-                        </label>
-                    </div>
+                <h5 class="my-3" id="idQuestionHeader"></h5>
+                <div class="mb-3" id="idAnswersList"></div>
+                <div class="d-flex justify-content-center pb-4">
+                    <button type="button" class="btn btn-primary mr-4" id="idNextQuestionButton">
+                        Siguiente
+                    </button>
+                    <button type="button" class="btn btn-danger ml-4" id="idRebootQuizButton">
+                        Reiniciar
+                    </button>
                 </div>
-                <button type="button" class="btn btn-primary" id="idNextQuestionButton">Siguiente</button>
-                <button type="button" class="btn btn-danger ml-3" id="idRebootQuizButton">Reiniciar</button>
             </div>
         </main>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <script src="./question_context.js"></script>
         <script>
-            var colors = new Array("red","green","blue");
-            var numberOfQuestions = 3;
-            var questionIndex = 1;
-            var questionText = "Pregunta número ";
+            var listOfQuestionContexts = getListOfQuestionContexts();
+            var questionContextIndex = 0;
+            var amountOfQuestions = listOfQuestionContexts.length;
 
-            document.getElementsByTagName("div")[0].style.backgroundColor = colors[questionIndex - 1];
-            document.getElementById("idQuestionHeader").innerText = questionText + questionIndex;
-            document.getElementById("idNextQuestionButton").onclick = function(){
-                var progressPercentage = Math.trunc(questionIndex / numberOfQuestions * 100);
+            loadQuestionContext(questionContextIndex);
+            document.getElementById("idNextQuestionButton").onclick = function()
+            {
+                questionContextIndex++;
+                updateProgressBar(questionContextIndex,amountOfQuestions);
+                if(questionContextIndex < amountOfQuestions)
+                {
+                    clearQuestionContext();
+                    loadQuestionContext(questionContextIndex);
+                }
+                else
+                {
+                    disableQuestionContext();
+                }
+            };
+            document.getElementById("idRebootQuizButton").onclick = function(){
+                questionContextIndex = 0;
+                updateProgressBar(questionContextIndex,amountOfQuestions)
+                
+                enableQuestionContext();
+                clearQuestionContext();
+
+                loadQuestionContext(questionContextIndex);
+            };
+
+            function getListOfQuestionContexts()
+            {
+                var listOfQuestionContexts = new Array();
+                listOfQuestionContexts.push(new QuestionContext("./assets/images/bg_question_1.jpg",
+                "¿Cada cuánto consume cerveza?",["Semanal","Quincenal","Mensual","Rara vez","Otro"]));
+                listOfQuestionContexts.push(new QuestionContext("./assets/images/bg_question_2.jpg",
+                "En promedio ¿Cuántas cervezas se toma?",["1 a 3","4 a 6","7 a 9","Más de 9"]));
+                listOfQuestionContexts.push(new QuestionContext("./assets/images/bg_question_3.jpg",
+                "¿De las siguientes cervezas cual es la que más consume?",["Alhambra","Cruzcampo"
+                ,"Estrella Galicia","San Miguel","Mahou"]));
+                listOfQuestionContexts.push(new QuestionContext("./assets/images/bg_question_4.jpg",
+                "¿Por qué es la cerveza que más consume?",["Precio","Sabor","Tradición","Publicidad"]));
+                listOfQuestionContexts.push(new QuestionContext("./assets/images/bg_question_5.jpg",
+                "¿Cuánto dinero usted mensualmente consume en cerveza?",["10 € o menos","10 € a 30 €",
+                "30 € a 50 €","Más de 50 €"]));
+                listOfQuestionContexts.push(new QuestionContext("./assets/images/bg_question_6.jpg",
+                "¿Cuál de estos sabores es el que más le agrada?",["Alhambra Tradicional",
+                "Alhambra Especial","Alhambra Especial Sin","Alhambra Reserva 1925","Alhambra Reserva Roja"]));
+                listOfQuestionContexts.push(new QuestionContext("./assets/images/bg_question_7.jpg",
+                "¿Usted consumiría cerveza Alhambra si esta?",["Cambia su sabor","Baja sus precios",
+                "Baja sus precios","Tuviera más presencia en los establecimientos","Otra"]));
+                return listOfQuestionContexts;
+            }
+
+            function updateProgressBar(questionContextIndex,amountOfQuestions)
+            {
+                var progressPercentage = Math.trunc(questionContextIndex / amountOfQuestions * 100);
                 var progressBar = document.getElementsByClassName("progress-bar")[0];
                 progressBar.style.width = progressPercentage + "%";
                 progressBar.setAttribute("aria-valuenow",progressPercentage);
                 progressBar.innerText = progressPercentage + "%";
-                
-                var radioButtonsList = document.getElementsByName("nameAnswersRadioButtons");
-                for(let radioButtonElement of radioButtonsList)
-                {
-                    radioButtonElement.checked = false;
-                }
+            }
 
-                if(questionIndex < numberOfQuestions)
+            function clearQuestionContext()
+            {
+                document.getElementById("idBackgroundImage").removeAttribute("src");
+                document.getElementById("idQuestionHeader").innerText = "";
+                var htmlAnswersList = document.getElementById("idAnswersList");
+                while (htmlAnswersList.firstChild)
                 {
-                    questionIndex++;
-                    document.getElementsByTagName("div")[0].style.backgroundColor = 
-                    colors[questionIndex - 1];
-                    document.getElementById("idQuestionHeader").innerText = questionText + questionIndex;
+                    htmlAnswersList.removeChild(htmlAnswersList.firstChild);
                 }
-                else
-                {
-                    document.getElementsByTagName("div")[0].style.backgroundColor = "black";
-                    document.getElementsByTagName("h2")[0].classList.add("text-muted");
-                    for(let radioButtonElement of radioButtonsList)
-                    {
-                        radioButtonElement.setAttribute("disabled","");
-                    }
-                    document.getElementById("idNextQuestionButton").setAttribute("disabled","");
-                }
-            };
-            document.getElementById("idRebootQuizButton").onclick = function(){
-                questionIndex = 1;
-                document.getElementsByTagName("div")[0].style.backgroundColor = colors[questionIndex - 1];
-                document.getElementById("idQuestionHeader").innerText = questionText + questionIndex;
+            }
 
-                var progressBar = document.getElementsByClassName("progress-bar")[0];
-                progressBar.style.width = "0%";
-                progressBar.setAttribute("aria-valuenow",0);
-                progressBar.innerText = "0%";
-
-                document.getElementsByTagName("h2")[0].classList.remove("text-muted");
-                var radioButtonsList = document.getElementsByName("nameAnswersRadioButtons");
-                for(let radioButtonElement of radioButtonsList)
+            function loadQuestionContext(questionContextIndex)
+            {
+                document.getElementById("idBackgroundImage").src = 
+                listOfQuestionContexts[questionContextIndex].urlBackgoundImage;
+                document.getElementById("idQuestionHeader").innerText = (questionContextIndex + 1) 
+                + ". " + listOfQuestionContexts[questionContextIndex].question;
+                var htmlAnswersList = document.getElementById("idAnswersList");
+                for(let answerIndex = 0; 
+                answerIndex < listOfQuestionContexts[questionContextIndex].listOfAnswers.length; 
+                answerIndex++)
                 {
-                    radioButtonElement.removeAttribute("disabled");
+                    var htmlDiv = document.createElement("div");
+                    htmlDiv.classList.add("form-check", "mb-2");
+                    var htmlInput = document.createElement("input");
+                    htmlInput.classList.add("form-check-input");
+                    htmlInput.type ="radio";
+                    htmlInput.name = "nameAnswersRadioButtons";
+                    htmlInput.id = "idAnswer" + answerIndex;
+                    var htmlLabel = document.createElement("label");
+                    htmlLabel.classList.add("form-check-label");
+                    htmlLabel.setAttribute("for",htmlInput.id);
+                    htmlLabel.innerText = listOfQuestionContexts[questionContextIndex]
+                    .listOfAnswers[answerIndex];
+                    htmlDiv.appendChild(htmlInput);
+                    htmlDiv.appendChild(htmlLabel);
+                    htmlAnswersList.appendChild(htmlDiv);
                 }
+            }
+
+            function enableQuestionContext()
+            {
+                document.getElementsByTagName("h5")[0].classList.remove("text-muted");
                 document.getElementById("idNextQuestionButton").removeAttribute("disabled");
-            };
+            }
+
+            function disableQuestionContext()
+            {
+                document.getElementsByTagName("h5")[0].classList.add("text-muted");
+                var radioButtonsList = document.getElementsByName("nameAnswersRadioButtons");
+                for(let radioButtonElement of radioButtonsList)
+                {
+                    radioButtonElement.setAttribute("disabled","");
+                }
+                document.getElementById("idNextQuestionButton").setAttribute("disabled","");
+            }
         </script>
     </body>
 </html>
