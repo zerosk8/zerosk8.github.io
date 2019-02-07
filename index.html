@@ -4,36 +4,76 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.5">
+    <meta name="author" content="Alejandro Mesa Rodríguez">
     <title>Alejandro Mesa Rodríguez · Software Development Projects</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   </head>
   <body>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Projects</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#whatsOn">WhatsOn PWA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#beerQuiz">BeerQuiz PWA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contactsAndSmsReports">Contacts and SMS reports</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#github">GitHub Profile</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
     <main role="main">
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron bg-dark text-light">
+      <div class="jumbotron">
         <div class="container">
           <h1 class="display-5">Alejandro Mesa Rodríguez</h1>
           <h3 class="display-6 text-muted">IT Engineer</h3>
           <p>
-            Hello! I'm a IT Engineer who studied in University of Granada, Spain,
-            with a Master in Software Development. Experience in databases management 
-            and systems administrations and bits of knowledge in networks administration.
-            Open-minded to improve and gather knowledge in IT. GNU/Linux lover and 
-            experience in Windows use and administration. Sociable. Professional and focused.
+            I'm a IT Engineer who studied in University of Granada, Spain,
+            with a Master in Software Development.
           </p>
-          <p>
-            Welcome to my software development projects website.
-          </p>
+          <h5>
+            Full stack developer with experience in several programming languages
+          </h5>
+          <ul>
+            <li>Desktop / Business Logic: C++, Java, C#, Ansi C, Python, Perl</li>
+            <li>Client Side / Web GUI: HTML, CSS, JavaScript</li>
+            <li>Server Side / Business Logic: PHP, JavaScript</li>
+            <li>DB Management: Oracle, Microsoft SQL Server, MySQL, MariaDB</li>
+          </ul>
+          <h5>
+              Frameworks and libs
+          </h5>
+          <ul>
+            <li>Web GUI: BootStrap, Material Design for Bootstrap, JQuery</li>
+            <li>Desktop GUI: Java Swing, GTK+, gtkmm</li>
+            <li>Business Logic: C++ Standard Template Language</li>
+          </ul>
+          <h5>Integrated Development Environments and tools</h5>
+          <ul>
+            <li>Microdoft Visual Studio / Visutal Studio Code</li>
+            <li>NetBeans</li>
+            <li>Eclipse</li>
+            <li>Bloodshed Dev-C++</li>
+            <li>Glade</li>
+          </ul>
         </div>
       </div>
       <div class="container">
         <!-- Example row of columns -->
         <div class="row">
           <div class="col-md-4 mb-4">
-            <h3>WhatsOn PWA</h3>
+            <h3 id="whatsOn">WhatsOn PWA</h3>
             <img class="mx-auto d-block my-3" src="assets/images/icon-whatson-144x144.png" alt="WhatsOn icon">
             <p>
               WhatsOn is a Progressive Web Application which aims to provide interesting information about Granada's nightlife: 
@@ -43,7 +83,7 @@
             <p class="d-flex justify-content-center"><a class="btn btn-primary" href="https://whatson-pwa.firebaseapp.com" role="button">View demo »</a></p>
           </div>
           <div class="col-md-4 mb-4">
-            <h3>BeerQuiz PWA</h3>
+            <h3 id="beerQuiz">BeerQuiz PWA</h3>
             <img class="mx-auto d-block my-3" src="assets/images/icon-beerquiz-144x144.png" alt="WhatsOn icon">
             <p>
               Just an easy Progressive Web Application for a beer quiz which aims to be a web application and mobile native application.
@@ -54,7 +94,7 @@
             <p class="d-flex justify-content-center"><a class="btn btn-primary" href="https://quiz-pwa-53186.firebaseapp.com" role="button">View demo »</a></p>
           </div>
           <div class="col-md-4 mb-4">
-            <h3>Contacts and SMS reports</h3>
+            <h3 id="contactsAndSmsReports">Contacts and SMS reports</h3>
               <img class="mx-auto d-block my-3" src="assets/images/icon-phone-contacts-sms-reports-144x144.png" alt="Octocat icon">
             <p>
                 A C++ desktop application which lets you create web documents with all your smartphone contacts and SMS messages. 
@@ -67,7 +107,7 @@
         </div>
         <div class="row">
           <div class="col-md-4 mb-4 mx-auto">
-            <h3>GitHub Profile</h3>
+            <h3 id="github">GitHub Profile</h3>
             <img class="mx-auto d-block my-3 pt-4" src="assets/images/icon-octocat-144x144.png" alt="Octocat icon">
             <p>
                 Discover more personal projects in my GitHub user profile.
