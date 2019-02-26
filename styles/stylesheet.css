@@ -1,0 +1,70 @@
+@media screen and (max-width: 992px) {
+    main {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    main {
+        padding-left: 15vw;
+        padding-right: 15vw;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    background-color: #e6e6e6;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 150%;
+}
+
+main {
+    position: relative;
+    top: -50vh;
+
+    position: absolute;
+    top: 30vh;
+}
+
+footer {
+    height: 30vh;
+}
+
+.classHeadingUnderlining {
+    border-bottom-width: 5px solid;
+    border-bottom-style: solid;
+}
+
+#idBackgroundPicture {
+    padding-top: 56px;
+    height: 80vh;
+    background-image: url("../assets/images/background-1280x629.png");
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#idProfilePicture {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+#olaKeAse {
+    opacity: 0;
+    transition: all 1s;
+}
+
+#olaKeAse.paco {
+    opacity: 1;
+}
