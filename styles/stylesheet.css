@@ -1,3 +1,20 @@
+:root {
+    --primary-color: #28a745;
+    --navbar-height: 56px;
+}
+
+/*
+    Pseudo class modification necessary to navigate in the document with a fixed navigation bar.
+    More info:
+    http://darktef.github.io/posts/2017-03-offset-html-anchors-for-fixed-header-with-css
+*/
+:target {
+    display: block;
+    position: relative;
+    top: calc(-1 * var(--navbar-height));
+    visibility: hidden;
+}
+
 @media screen and (max-width: 992px) {
     main {
         padding-left: 5vw;
@@ -19,21 +36,33 @@ html {
 body {
     position: relative;
     background-color: #e6e6e6;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 150%;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 175%;
+}
+
+h2 {
+    font-size: 140%;
+}
+
+h3 {
+    font-size: 100%;
 }
 
 main {
-    position: relative;
-    top: -50vh;
-
+    /*
     position: absolute;
-    top: 30vh;
+    top: 20vh;
+    */
+    position: relative;
+    top: -30vh;
 }
 
 footer {
@@ -45,11 +74,15 @@ footer {
     border-bottom-style: solid;
 }
 
+.dropdown-item:active, .dropdown-item.active {
+    background-color: var(--primary-color);
+}
+
 #idBackgroundPicture {
-    padding-top: 56px;
-    height: 80vh;
+    margin-top: var(--navbar-height);
+    height: 60vh;
     background-image: url("../assets/images/background-1280x629.png");
-    background-position: left top;
+    background-position: center top;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -58,13 +91,4 @@ footer {
 #idProfilePicture {
     max-width: 200px;
     max-height: 200px;
-}
-
-#olaKeAse {
-    opacity: 0;
-    transition: all 1s;
-}
-
-#olaKeAse.paco {
-    opacity: 1;
 }
