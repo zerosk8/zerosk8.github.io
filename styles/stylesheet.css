@@ -78,6 +78,11 @@ footer {
     background-color: var(--primary-color);
 }
 
+.progress-bar {
+    transition: all 1s ease-out 0.25s;
+    width: 0%;
+}
+
 #idBackgroundPicture {
     margin-top: var(--navbar-height);
     height: 60vh;
@@ -91,4 +96,37 @@ footer {
 #idProfilePicture {
     max-width: 200px;
     max-height: 200px;
+}
+
+#idAboutMeSectionContainer, #idSystemsAndNetworksAdministrationSectionContainer {
+    transition: all 0.5s linear 0.25s;
+    transform: translatey(100px);
+    opacity: 0;
+}
+
+#idAboutMeSectionContainer.active, #idSystemsAndNetworksAdministrationSectionContainer.active {
+    transform: translatey(0);
+    opacity: 1;
+}
+
+#idHtmlProgressBar.active, #idBootstrapProgressBar.active, #idRegExpProgressBar.active, #idMySQLProgressBar.active, 
+#idMariaDBProgressBar.active, #idWriterProgressBar.active, #idDrawProgressBar.active {
+    width: 95%;
+}
+
+#idCppProgressBar.active, #idJavaProgressBar.active, #idCSharpProgressBar.active, #idCssProgressBar.active,
+#idJavaScriptClientProgressBar.active, #idCppSTLProgressBar.active, #idEclipseProgressBar.active, #idDevCppProgressBar.active, 
+#idMSSQLServerProgressBar.active, #idWordProgressBar.active, #idPowerPointProgressBar.active, #idCalcProgressBar.active {
+    width: 90%;
+}
+
+#idCProgressBar.active, #idPhpProgressBar.active, #idJQueryProgressBar.active, #idGTKProgressBar.active, 
+#idVisualStudioProgressBar.active, #idNetBeansProgressBar.active, #idGladeProgressBar.active, #idOracleRDBMSProgressBar.active, 
+#idExcelProgressBar.active {
+    width: 85%;
+}
+
+#idPythonProgressBar.active, #idPerlProgressBar.active, #idJavaScriptServerProgressBar.active, #idMDBootstrapProgressBar.active,
+#idJavaSwingProgressBar.active, #idOracleORDBMSProgressBar.active {
+    width: 65%;
 }
