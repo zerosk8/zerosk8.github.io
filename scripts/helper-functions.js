@@ -13,9 +13,21 @@ function getArrayOfHtmlElementsSectionContainer() {
 
 function getArrayOfHtmlElementsProgressBar() {
     return Array.from(document.getElementsByClassName("classProgressBar95"))
+        .concat(Array.from(document.getElementsByClassName("classProgressBar95")))
         .concat(Array.from(document.getElementsByClassName("classProgressBar90")))
         .concat(Array.from(document.getElementsByClassName("classProgressBar85")))
-        .concat(Array.from(document.getElementsByClassName("classProgressBar65")));
+        .concat(Array.from(document.getElementsByClassName("classProgressBar80")))
+        .concat(Array.from(document.getElementsByClassName("classProgressBar85")))
+        .concat(Array.from(document.getElementsByClassName("classProgressBar75")))
+        .concat(Array.from(document.getElementsByClassName("classProgressBar70")))
+        .concat(Array.from(document.getElementsByClassName("classProgressBar65")))
+        .concat(Array.from(document.getElementsByClassName("classProgressBar60")))
+        .concat(Array.from(document.getElementsByClassName("classProgressBar55")))
+        .concat(Array.from(document.getElementsByClassName("classProgressBar50")));
+}
+
+function getArrayOfHtmlElementsIdesAndToolsContainer() {
+    return Array.from(document.getElementsByClassName("classIdesAndToolsContainer"));
 }
 
 function getArrayOfHtmlElementsProgressBarSoftwareProjectContainer() {
@@ -37,7 +49,9 @@ function throttleScroll(event) {
 }
 
 function showHtmlElementsWhenVisibleInViewport() {
-    htmlElementsArray = htmlSectionContainers.concat(htmlProgressBars).concat(htmlSoftwareProjectsContainers);
+    htmlElementsArray = htmlSectionContainers.concat(getArrayOfHtmlElementsProgressBar())
+        .concat(getArrayOfHtmlElementsProgressBarSoftwareProjectContainer())
+        .concat(getArrayOfHtmlElementsIdesAndToolsContainer());
     htmlElementsArray.forEach(function (htmlElement) {
         if (isHtmlElementPartiallyVisible(htmlElement)) {
             addActiveClassToHtmlElement(htmlElement);

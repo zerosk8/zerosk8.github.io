@@ -95,8 +95,8 @@ footer {
 #idBackgroundPicture {
     margin-top: var(--navbar-height);
     height: 60vh;
-    background-image: url("../assets/images/background-1280x629.png");
-    background-position: center top;
+    background-image: url("../assets/images/background-1024x683.jpg");
+    background-position: left bottom;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -130,6 +130,46 @@ footer {
     width: 85%;
 }
 
+.classProgressBar80.active {
+    width: 80%;
+}
+
+.classProgressBar75.active {
+    width: 75%;
+}
+
+.classProgressBar70.active {
+    width: 70%;
+}
+
 .classProgressBar65.active {
     width: 65%;
+}
+
+.classProgressBar60.active {
+    width: 60%;
+}
+
+.classProgressBar55.active {
+    width: 55%;
+}
+
+.classProgressBar50.active {
+    width: 50%;
+}
+
+.classLogoImage {
+    width: 144px;
+    height: 144px;
+}
+
+.classIdesAndToolsContainer {
+    transition: all 0.8s ease-in-out;
+    transform: scale(1,0);
+    opacity: 0;
+}
+
+.classIdesAndToolsContainer.active {
+    transform: scale(1,1);
+    opacity: 1;
 }
