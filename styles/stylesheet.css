@@ -163,6 +163,11 @@ footer {
     height: 144px;
 }
 
+.classLogoImage2 {
+    width: 256px;
+    height: 256px;
+}
+
 .classIdesAndToolsContainer {
     transition: all 0.8s ease-in-out;
     transform: scale(1,0);
@@ -170,6 +175,17 @@ footer {
 }
 
 .classIdesAndToolsContainer.active {
+    transform: scale(1,1);
+    opacity: 1;
+}
+
+.classVirtualizationAndEmulationContainer {
+    transition: all 0.8s ease-in-out;
+    transform: scale(1,0);
+    opacity: 0;
+}
+
+.classVirtualizationAndEmulationContainer.active {
     transform: scale(1,1);
     opacity: 1;
 }

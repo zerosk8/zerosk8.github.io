@@ -30,6 +30,10 @@ function getArrayOfHtmlElementsIdesAndToolsContainer() {
     return Array.from(document.getElementsByClassName("classIdesAndToolsContainer"));
 }
 
+function getArrayOfHtmlElementsVirtualizationAndEmulationContainer() {
+    return Array.from(document.getElementsByClassName("classVirtualizationAndEmulationContainer"));
+}
+
 function getArrayOfHtmlElementsProgressBarSoftwareProjectContainer() {
     return Array.from(document.getElementsByClassName("classSoftwareProjectContainer"));
 }
@@ -51,7 +55,8 @@ function throttleScroll(event) {
 function showHtmlElementsWhenVisibleInViewport() {
     htmlElementsArray = htmlSectionContainers.concat(getArrayOfHtmlElementsProgressBar())
         .concat(getArrayOfHtmlElementsProgressBarSoftwareProjectContainer())
-        .concat(getArrayOfHtmlElementsIdesAndToolsContainer());
+        .concat(getArrayOfHtmlElementsIdesAndToolsContainer())
+        .concat(getArrayOfHtmlElementsVirtualizationAndEmulationContainer());
     htmlElementsArray.forEach(function (htmlElement) {
         if (isHtmlElementPartiallyVisible(htmlElement)) {
             addActiveClassToHtmlElement(htmlElement);
