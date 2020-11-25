@@ -8,7 +8,7 @@ function getArrayOfHtmlElementsNavLink() {
 
 function getArrayOfHtmlElementsSectionContainer() {
     return [document.getElementById("idAboutMeSectionContainer"),
-    document.getElementById("idSystemsAndNetworksAdministrationSectionContainer")];
+    document.getElementById("idVirtualizationSystemsAndNetworksAdministrationSectionContainer")];
 }
 
 function getArrayOfHtmlElementsProgressBar() {

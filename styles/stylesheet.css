@@ -107,13 +107,15 @@ footer {
     max-height: 200px;
 }
 
-#idAboutMeSectionContainer, #idSystemsAndNetworksAdministrationSectionContainer {
+#idAboutMeSectionContainer,
+#idVirtualizationSystemsAndNetworksAdministrationSectionContainer {
     transition: all 0.5s linear 0.25s;
     transform: translatey(100px);
     opacity: 0;
 }
 
-#idAboutMeSectionContainer.active, #idSystemsAndNetworksAdministrationSectionContainer.active {
+#idAboutMeSectionContainer.active,
+#idVirtualizationSystemsAndNetworksAdministrationSectionContainer.active {
     transform: translatey(0);
     opacity: 1;
 }
