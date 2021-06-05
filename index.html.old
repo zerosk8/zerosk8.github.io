@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Alejandro Mesa Rodríguez">
+    <title>Alejandro Mesa Rodríguez - Computer Engineer</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous">
+    <!-- Devicon icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="./styles/stylesheet.css">
+    <!-- Roboto and Lato Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Lato">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" id="idNavigationBar">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#idNavigationBarContent"
+            aria-controls="idNavigationBarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="idNavigationBarContent">
+            <ul class="navbar-nav w-100 nav-justified">
+                <li class="nav-item">
+                    <a class="nav-link" href="#idAboutMeSection">
+                        About Me
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="idNavigationBarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Skills
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="idNavigationBarDropdown">
+                        <a class="dropdown-item" href="#idSoftwareEngineerSection">
+                            Software Engineer
+                        </a>
+                        <a class="dropdown-item" href="#idDatabasesManagementSection">
+                            Databases Management
+                        </a>
+                        <a class="dropdown-item" href="#idOfficeAutomationSection">
+                            Office Automation
+                        </a>
+                        <a class="dropdown-item" href="#idVirtualizationSystemsAndNetworksAdministrationSection">
+                            Virtualization, Systems and Networks Administration
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#idSoftwareProjectsSection">
+                        Personal Software Projects
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="idBackgroundPicture" alt="Background Picture"></div>
+    <main role="main">
+        <!-- "a" element necessary to navigate in the document with a fixed navigation bar -->
+        <a id="idAboutMeSection"><span><br></span></a>
+        <div id="idAboutMeSectionContainer">
+            <div class="container bg-white shadow px-5 pt-5">
+                <div class="row">
+                    <div class="col-12 col-md-5 mx-auto text-center pb-5">
+                        <img class="img-fluid rounded-circle shadow my-3" id="idProfilePicture"
+                            src="./assets/images/profile-picture-256x256.png" alt="Profile Picture">
+                        <h1 class="text-success my-2">ALEJANDRO MESA RODRÍGUEZ</h1>
+                        <h2 class="my-2 text-secondary">COMPUTER ENGINEER</h2>
+                    </div>
+                    <div class="col-12 col-md-7">
+                        <h1 class="classHeadingUnderlining border-success pb-3">ABOUT ME</h1>
+                        <div class="py-3">
+                            <p class="text-secondary">
+                                Hello! I'm a Computer Engineer with a solid experience in 
+                                <span class="font-weight-bold">Software Engineering</span>: 
+                                Software Design and Development and Database Design and Management.
+                            </p>
+                            <p class="text-secondary">
+                                <span class="font-weight-bold">KISS</span> principles on design, 
+                                <span class="font-weight-bold">SOLID</span> principles on coding, 
+                                Clean and maintainable code and Data integrity on databases.
+                            </p>
+                            <p class="text-secondary">
+                                <span class="font-weight-bold">GNU/Linux based OS's</span> enthusiast. 
+                                Good experience in <span class="font-weight-bold">Windows based OS's</span> 
+                                use and administration.
+                            </p>
+                            <p class="text-secondary">
+                                Versatile person and researcher. Constant learning and Curiosity-driven. 
+                                Problem solving and new challenges. 
+                                Open-minded to improve and gather knowledge.
+                            </p>
+                            <p class="text-secondary">
+                                I studied <span class="font-weight-bold">Computer Engineering</span> 
+                                at University of Granada (Spain), also with a 
+                                <span class="font-weight-bold">Master in Software Development</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container d-flex justify-content-center bg-success py-2">
+                <a class="btn btn-success btn-lg rounded-circle mx-2" rel="noopener noreferrer" target="_blank"
+                    href="https://www.linkedin.com/in/alejandro-m-a55461186/?locale=en_US" role="button"
+                    title="View LinkedIn Profile" aria-label="View LinkedIn Profile">
+                    <i class="fab fa-linkedin display-5"></i></a>
+                <a class="btn btn-success btn-lg rounded-circle mx-2" rel="noopener noreferrer" target="_blank"
+                    href="https://github.com/zerosk8" role="button" title="View GitHub Profile"
+                    aria-label="View GitHub Profile"><i class="devicon-github-plain display-5"></i></a>
+                <a class="btn btn-success btn-lg rounded-circle mx-2" rel="noopener noreferrer" target="_blank"
+                    href="mailto:alejandro.mesa@protonmail.com" role="button"
+                    title="Email to: alejandro.mesa@protonmail.com" title="Email to: alejandro.mesa@protonmail.com"
+                    aria-label="View GitHub Profile"><i class="fas fa-at display-5"></i></a>
+            </div>
+        </div>
+        <!-- "a" element necessary to navigate in the document with a fixed navigation bar -->
+        <a id="idSoftwareEngineerSection"><br></a>
+        <h1 class="text-secondary text-center mt-3 py-4">SOFTWARE ENGINEER</h1>
+        <div class="container bg-white shadow mb-4 p-5" id="idSoftwareEngineerSectionContainer">
+            <h2 class="classHeadingUnderlining border-success pb-3">
+                DESKTOP PROGRAMMING LANGUAGES
+            </h2>
+            <div class="row py-3">
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>C++ (std 11)</h3>
+                        <p>80%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar80 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>Java</h3>
+                        <p>80%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar80 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>C#</h3>
+                        <p>80%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar80 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>C (std 99)</h3>
+                        <p>70%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar70 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>Python</h3>
+                        <p>60%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar60 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>Perl</h3>
+                        <p>50%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar50 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 col-md-6 py-3">
+                    <h2 class="classHeadingUnderlining border-success pb-3">
+                        WEB (CLIENT SIDE) PROGRAMMING LANGUAGES
+                    </h2>
+                    <div class="pt-3">
+                        <div class="d-flex justify-content-between">
+                            <h3>HTML</h3>
+                            <p>90%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar classProgressBar90 progress-bar-animated progress-bar-striped bg-success"
+                                role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-3">
+                        <div class="d-flex justify-content-between">
+                            <h3>CSS</h3>
+                            <p>85%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar classProgressBar85 progress-bar-animated progress-bar-striped bg-success"
+                                role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-3">
+                        <div class="d-flex justify-content-between">
+                            <h3>JavaScript</h3>
+                            <p>80%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar classProgressBar80 progress-bar-animated progress-bar-striped bg-success"
+                                role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mt-5 mt-md-0 py-3">
+                    <h2 class="classHeadingUnderlining border-success pb-3">
+                        WEB (SERVER SIDE) PROGRAMMING LANGUAGES
+                    </h2>
+                    <div class="pt-3">
+                        <div class="d-flex justify-content-between">
+                            <h3>PHP</h3>
+                            <p>85%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar classProgressBar85 progress-bar-animated progress-bar-striped bg-success"
+                                role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-3">
+                        <div class="d-flex justify-content-between">
+                            <h3>JavaScript</h3>
+                            <p>50%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar classProgressBar50 progress-bar-animated progress-bar-striped bg-success"
+                                role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="classHeadingUnderlining border-success mt-5 pb-3">
+                FRAMEWORKS AND LIBRARIES
+            </h2>
+            <div class="row py-3">
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>BootStrap</h3>
+                        <p>90%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar90 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>JQuery</h3>
+                        <p>75%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar75 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>C++ Standard Template Library</h3>
+                        <p>75%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar75 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>GTK+ / gtkmm</h3>
+                        <p>70%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar70 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>Hibernate</h3>
+                        <p>60%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar60 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>Java Swing</h3>
+                        <p>60%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar60 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="classHeadingUnderlining border-success mt-5 pb-3">
+                IDEs AND TOOLS
+            </h2>
+            <div class="row py-3">
+                <div class="classIdesAndToolsContainer text-center col-12 col-md-4 py-3">
+                    <h3 class="pb-2">Visual Studio Code</h3>
+                    <img class="classLogoImage" src="./assets/images/logo-visual-studio-code.svg" alt="Visual Studio Code logo">
+                </div>
+                <div class="classIdesAndToolsContainer text-center col-12 col-md-4 py-3">
+                    <h3 class="pb-2">Visual Studio</h3>
+                    <img class="classLogoImage" src="./assets/images/logo-visual-studio.svg" alt="Visual Studio Code logo">
+                </div>
+                <div class="classIdesAndToolsContainer text-center col-12 col-md-4 py-3">
+                    <h3 class="pb-2">NetBeans</h3>
+                    <img class="classLogoImage" src="./assets/images/logo-apache-netbeans.svg" alt="Apache NetBeans logo">
+                </div>
+                <div class="classIdesAndToolsContainer text-center col-12 col-md-4 py-3">
+                    <h3 class="pb-2">Eclipse</h3>
+                    <img class="classLogoImage" src="./assets/images/logo-eclipse.svg" alt="Eclipse logo">
+                </div>
+                <div class="classIdesAndToolsContainer text-center col-12 col-md-4 py-3">
+                    <h3 class="pb-2">Glade Interface Designer</h3>
+                    <img class="classLogoImage" src="./assets/images/logo-gtk.svg" alt="Glade Interface Designer logo">
+                </div>
+                <div class="classIdesAndToolsContainer text-center col-12 col-md-4 py-3">
+                    <h3 class="pb-2">Regular Expressions</h3>
+                    <img class="classLogoImage" src="./assets/images/logo-regular-expressions.svg" alt="Regular Expressions logo">
+                </div>
+            </div>
+            <h2 class="classHeadingUnderlining border-success mt-5 pb-3">
+                VIRTUALIZATION AND EMULATION
+            </h2>
+            <div class="row py-3">
+                <div class="classVirtualizationAndEmulationContainer text-center col-12 col-md-6 py-3">
+                    <img class="classLogoImage2" src="./assets/images/logo-virtualbox.png" alt="VirtualBox logo">
+                </div>
+                <div class="classVirtualizationAndEmulationContainer text-center col-12 col-md-6 py-3">
+                    <img class="classLogoImage2" src="./assets/images/logo-docker.svg" alt="Docker logo">
+                </div>
+            </div>
+        </div>
+        <!-- "a" element necessary to navigate in the document with a fixed navigation bar -->
+        <a id="idDatabasesManagementSection"><br></a>
+        <h1 class="text-secondary text-center mt-3 py-4">DATABASES MANAGEMENT</h1>
+        <div class="container bg-white shadow mb-4 p-5" id="idDatabasesManagementSectionContainer">
+            <h2 class="classHeadingUnderlining border-success pb-3">
+                RELATIONAL DATABASES
+            </h2>
+            <div class="row py-3">
+                <div class="col-12 col-md-6 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>MySQL</h3>
+                        <p>80%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar80 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>MariaDB</h3>
+                        <p>80%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar80 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>Oracle</h3>
+                        <p>75%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar75 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>Microsoft SQL Server</h3>
+                        <p>75%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar75 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="classHeadingUnderlining border-success mt-5 pb-3">
+                OBJECT-RELATIONAL DATABASES
+            </h2>
+            <div class="py-3">
+                <div class="d-flex justify-content-between">
+                    <h3>Oracle</h3>
+                    <p>60%</p>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar classProgressBar60 progress-bar-animated progress-bar-striped bg-success"
+                        role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- "a" element necessary to navigate in the document with a fixed navigation bar -->
+        <a id="idOfficeAutomationSection"><br></a>
+        <h1 class="text-secondary text-center mt-3 py-4">OFFICE AUTOMATION</h1>
+        <div class="container bg-white shadow mb-4 p-5" id="idOfficeAutomationSectionContainer">
+            <div class="row">
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>LibreOffice Writer</h3>
+                        <p>90%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar90 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>Microsoft Word</h3>
+                        <p>90%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar90 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>LibreOffice Draw</h3>
+                        <p>70%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar70 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>Microsoft PowerPoint</h3>
+                        <p>70%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar70 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>LibreOffice Calc</h3>
+                        <p>70%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar70 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 pt-3">
+                    <div class="d-flex justify-content-between">
+                        <h3>Microsoft Excel</h3>
+                        <p>70%</p>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar classProgressBar70 progress-bar-animated progress-bar-striped bg-success"
+                            role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- "a" element necessary to navigate in the document with a fixed navigation bar -->
+        <a id="idVirtualizationSystemsAndNetworksAdministrationSection"><br></a>
+        <h1 class="text-secondary text-center mt-3 py-4">VIRTUALIZATION, SYSTEMS AND NETWORKS ADMINISTRATION</h1>
+        <div class="container bg-white shadow mb-4 px-5 pt-5" id="idVirtualizationSystemsAndNetworksAdministrationSectionContainer">
+            <div class="row">
+                <div class="col py-3">
+                    <h2 class="classHeadingUnderlining border-success pb-3">
+                        VIRTUALIZATION
+                    </h2>
+                    <div class="py-3">
+                        <p class="text-secondary">
+                            <span class="font-weight-bold">VirtualBox</span> virtual machines' Management<br>
+                            <span class="font-weight-bold">Docker</span> containers' Management:
+                        </p>
+                        <ul class="text-secondary">
+                            <li>Docker Engine</li>
+                            <li>Dockerfile</li>
+                            <li>Docker Compose</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col py-3">
+                    <h2 class="classHeadingUnderlining border-success pb-3">
+                        SYSTEMS ADMINISTRATION
+                    </h2>
+                    <div class="py-3">
+                        <p class="text-secondary">
+                            <span class="font-weight-bold">Operative Systems</span> Installation<br>
+                            <span class="font-weight-bold">Software</span> Management<br>
+                            <span class="font-weight-bold">Users</span> Control<br>
+                            <span class="font-weight-bold">Web Server</span> Setup and Management<br>
+                            Remote control via <span class="font-weight-bold">SSH</span> and <span
+                                class="font-weight-bold">FTP / SFTP</span><br>
+                            <span class="font-weight-bold">Bash Shell</span> Utilization (GNU/Linux)
+                        </p>
+                        <p class="text-center">
+                            <i class="devicon-windows8-original colored display-4 px-3 py-2"></i>
+                            <i class="devicon-linux-plain colored display-4 px-3 py-2"></i>
+                        </p>
+                    </div>
+                </div>
+                <div class="col py-3">
+                    <h2 class="classHeadingUnderlining border-success pb-3">
+                        NETWORKS ADMINISTRATION
+                    </h2>
+                    <div class="py-3">
+                        <p class="text-secondary">
+                            <span class="font-weight-bold">Network Deployment</span> with <span
+                                class="font-weight-bold">MikroTik</span> (GNU/Linux)<br>
+                            <span class="font-weight-bold">LAN Security</span> Management<br>
+                            <span class="font-weight-bold">Firewall</span> Management (GNU/Linux)<br>
+                            <span class="font-weight-bold">MAC Address Filtering</span><br>
+                            <span class="font-weight-bold">Port Forwarding</span><br>
+                            <span class="font-weight-bold">Network Protocol Analyzer</span> with <span
+                                class="font-weight-bold">Wireshark</span><br>
+                        </p>
+                        <p class="text-center">
+                            <i class="fas fa-network-wired display-4 px-3 py-2"></i>
+                            <i class="fas fa-ethernet display-4 px-3 py-2"></i>
+                            <i class="fas fa-wifi display-4 px-3 py-2"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- "a" element necessary to navigate in the document with a fixed navigation bar -->
+        <a id="idSoftwareProjectsSection"><br></a>
+        <h1 class="text-secondary text-center mt-3 py-4">PERSONAL SOFTWARE PROJECTS</h1>
+        <div class="row">
+            <div class="classSoftwareProjectContainer col col-12 col-md-6 col-lg-4 pb-4">
+                <div class="bg-white shadow text-center h-100 p-4">
+                    <img class="mx-auto d-block rounded-circle shadow my-3"
+                        src="./assets/icons/icon-whatson-144x144.png" alt="WhatsOn icon">
+                    <h2 class="pb-3">
+                        WhatsOn PWA (Mock-Up)
+                    </h2>
+                    <p class="text-secondary">
+                        Progressive Web Application which aims to provide interesting information about Granada's
+                        nightlife:
+                        bars, pubs, discos, events and offers.</p>
+                    <p class="py-2">
+                        <i class="devicon-bootstrap-plain-wordmark colored display-4" title="Bootstrap"
+                            aria-label="Bootstrap"></i>
+                        <i class="devicon-html5-plain-wordmark colored display-4" title="HTML 5"
+                            aria-label="HTML 5"></i>
+                        <i class="devicon-css3-plain-wordmark colored display-4" title="CSS 3" aria-label="CSS 3"></i>
+                        <i class="devicon-javascript-plain colored display-4" title="JavaScript"
+                            aria-label="JavaScript"></i>
+                        <i class="devicon-php-plain colored display-4" title="PHP" aria-label="PHP"></i>
+                        <i class="devicon-mysql-plain-wordmark colored display-4" title="MySQL" aria-label="MySQL"></i>
+                        <i class="devicon-apache-plain-wordmark colored display-4" title="Apache"
+                            aria-label="Apache"></i>
+                    </p>
+                    <p class="d-flex justify-content-center py-2">
+                        <a class="btn btn-success btn-lg rounded-circle" rel="noopener noreferrer" target="_blank"
+                            href="https://whatson-pwa.firebaseapp.com" role="button" title="View demo"
+                            aria-label="View demo"><i class="fas fa-link"></i></a>
+                    </p>
+                </div>
+            </div>
+            <div class="classSoftwareProjectContainer col col-12 col-md-6 col-lg-4 pb-4">
+                <div class="bg-dark text-light shadow text-center h-100 p-4">
+                    <img class="mx-auto d-block rounded-circle shadow my-3"
+                        src="./assets/icons/icon-beerquiz-144x144.png" alt="BeerQuiz icon">
+                    <h2 class="pb-3">
+                        BeerQuiz PWA
+                    </h2>
+                    <p>
+                        Progressive Web Application for a beer quiz which aims to be a web application and mobile native
+                        application.
+                        Install the app as native and work offline.
+                    </p>
+                    <p class="py-2">
+                        <i class="devicon-bootstrap-plain-wordmark display-4" title="Bootstrap"
+                            aria-label="Bootstrap"></i>
+                        <i class="devicon-html5-plain-wordmark display-4" title="HTML 5" aria-label="HTML 5"></i>
+                        <i class="devicon-css3-plain-wordmark display-4" title="CSS 3" aria-label="CSS 3"></i>
+                        <i class="devicon-javascript-plain display-4" title="JavaScript" aria-label="JavaScript"></i>
+                    </p>
+                    <p class="d-flex justify-content-center py-2">
+                        <a class="btn btn-success btn-lg rounded-circle" rel="noopener noreferrer" target="_blank"
+                            href="https://quiz-pwa-53186.firebaseapp.com" role="button" title="View demo"
+                            aria-label="View demo"><i class="fas fa-link"></i></a>
+                    </p>
+                </div>
+            </div>
+            <div class="classSoftwareProjectContainer col col-12 col-md-6 col-lg-4 pb-4">
+                <div class="bg-white shadow text-center h-100 p-4">
+                    <img class="mx-auto d-block rounded-circle shadow my-3"
+                        src="assets/icons/icon-phone-contacts-sms-reports-144x144.png"
+                        alt="Contacts and SMS reports icon">
+                    <h2 class="pb-3">
+                        Contacts and SMS reports
+                    </h2>
+                    <p class="text-secondary">
+                        C++ desktop application which lets you create web documents with all your smartphone contacts
+                        and SMS messages.
+                    </p>
+                    <p class="py-2">
+                        <i class="devicon-cplusplus-plain-wordmark colored display-4" title="C++" aria-label="C++"></i>
+                        <i class="devicon-bootstrap-plain-wordmark colored display-4" title="Bootstrap"
+                            aria-label="Bootstrap"></i>
+                        <i class="devicon-html5-plain-wordmark colored display-4" title="HTML 5"
+                            aria-label="HTML 5"></i>
+                    </p>
+                    <p class="d-flex justify-content-center py-2">
+                        <a class="btn btn-success btn-lg rounded-circle" rel="noopener noreferrer" target="_blank"
+                            href="https://github.com/zerosk8/phone-contacts-sms-reports" role="button"
+                            title="View project" aria-label="View project"><i class="fas fa-link"></i></a>
+                    </p>
+                </div>
+            </div>
+            <div class="classSoftwareProjectContainer col col-12 col-md-6 col-lg-4 pb-4">
+                <div class="bg-dark text-light shadow text-center h-100 p-4">
+                    <img class="mx-auto d-block rounded-circle shadow my-3"
+                        src="assets/icons/icon-creatures-python-gtk-144x144.png" alt="Creatures icon">
+                    <h2 class="pb-3">
+                        Creatures
+                    </h2>
+                    <p>
+                        Python desktop application, with a GTK+ GUI, which manages information about incredible animals
+                        and creatures!
+                    </p>
+                    <p class="py-2">
+                        <i class="devicon-python-plain-wordmark display-4" title="Python" aria-label="Python"></i>
+                        <i class="devicon-mysql-plain-wordmark display-4" title="MySQL" aria-label="MySQL"></i>
+                    </p>
+                    <p class="d-flex justify-content-center py-2">
+                        <a class="btn btn-success btn-lg rounded-circle" rel="noopener noreferrer" target="_blank"
+                            href="https://github.com/zerosk8/aplicacion-criaturas-python-gtk-mysql" role="button"
+                            title="View project" aria-label="View project"><i class="fas fa-link"></i></a>
+                    </p>
+                </div>
+            </div>
+            <div class="classSoftwareProjectContainer col col-12 col-md-6 col-lg-4 pb-4">
+                <div class="bg-white shadow text-center h-100 p-4">
+                    <img class="mx-auto d-block rounded-circle shadow my-3"
+                        src="assets/icons/icon-cinema-tickets-144x144.png" alt="Cinema Tickets icon">
+                    <h2 class="pb-3">
+                        Cinema Tickets
+                    </h2>
+                    <p class="text-secondary">
+                        Java project, from Hamburg University (Germany), for buying cinema tickets. Clean Code and
+                        S.O.L.I.D principles. Tests development.
+                    </p>
+                    <p class="py-2">
+                        <i class="devicon-java-plain-wordmark colored display-4" title="Java" aria-label="Java"></i>
+                    </p>
+                    <p class="d-flex justify-content-center py-2">
+                        <a class="btn btn-success btn-lg rounded-circle" rel="noopener noreferrer" target="_blank"
+                            href="https://github.com/zerosk8/cinema-tickets-java" role="button" title="View project"
+                            aria-label="View project"><i class="fas fa-link"></i></a>
+                    </p>
+                </div>
+            </div>
+            <div class="classSoftwareProjectContainer col col-12 col-md-6 col-lg-4 pb-4">
+                <div class="bg-dark text-light shadow text-center h-100 p-4">
+                    <img class="d-block rounded-circle bg-light shadow mx-auto my-3"
+                        src="assets/icons/icon-octocat-144x144.png" alt="Octocat icon">
+                    <h2 class="pb-3">
+                        GitHub Profile
+                    </h2>
+                    <p>
+                        Discover more personal projects in my GitHub user profile.
+                    </p>
+                    <p class="py-2">
+                        <i class="devicon-github-plain-wordmark display-4" title="GitHub" aria-label="GitHub"></i>
+                    </p>
+                    <p class="d-flex justify-content-center py-2">
+                        <a class="btn btn-success btn-lg rounded-circle" rel="noopener noreferrer" target="_blank"
+                            href="https://github.com/zerosk8" role="button" title="View profile"
+                            aria-label="View profile"><i class="fas fa-link"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="d-flex justify-content-center align-items-center bg-success text-light">
+        <p>© ALL RIGHTS RESERVED.</p>
+    </footer>
+    <!-- JQuery JS, Popper JS and Bootstrap JS files -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+    <script src="./scripts/helper-functions.js"></script>
+    <script>
+        var htmlSectionContainers = getArrayOfHtmlElementsSectionContainer();
+        var htmlNavLinks = getArrayOfHtmlElementsNavLink();
+        var isScrolling = false;
+
+        window.addEventListener("scroll", throttleScroll, false);
+        window.onload = showHtmlElementsWhenVisibleInViewport;
+        loadScrollspyInHtmlBody();
+        htmlNavLinks.forEach(navItem => {
+            navItem.addEventListener("click", () => {
+                removeActiveClassInHtmlElementFromArray(htmlNavLinks);
+                addActiveClassToHtmlElement(navItem);
+            });
+        });
+    </script>
+</body>
+
+</html>
