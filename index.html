@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>comapp openstreetmap-Generator</title>
+	<link rel="stylesheet" type="text/css" href="http://www.comapp-online.de/osm3/shared/css/generator_3.0/map.css" />
+</head>
+<body id="fe">
+	<div id="map"></div>
+	<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+	<script type="text/javascript" src="http://www.openstreetmap.org/openlayers/OpenStreetMap.js"></script>
+	<script type="text/javascript" src="http://www.comapp-online.de/osm3/shared/js/jquery_1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://www.comapp-online.de/osm3/shared/js/plugins/jquery.flash.js"></script>
+	<script type="text/javascript" src="http://www.comapp-online.de/osm3/shared/js/plugins/modernizr_2.6.2.js"></script>
+	<script type="text/javascript" src="http://www.comapp-online.de/osm3/shared/js/generator_3.0/mapGenerator.min.js"></script>
+	<script type="text/javascript">
+		(function($){
+			// ********** - comapp - mapGenerator jsonData - start - ************ //
+			var json = {"version":3,"locale":"de","units":"m","flashPath":"http://www.comapp-online.de/osm3/shared/swf/audioPlayer.swf","iconPath":"http://www.comapp-online.de/osm3/shared/img/marker/","geoPath":"http://www.comapp-online.de/osm3/shared/ajax/geopos.php","title":"Gemeinschaftsg%E4rten%20-%20G%F6ttinger%20Klimaschutztage%202021%20","descriptionStartStatus":true,"descriptionText":"Das%20Klimaschutzmanagment%20von%20der%20Stadt%20G%F6ttingen%20organisiert%20von%2017.%20bis%2020.06.%20die%20Klimaschutztage.%20Mitglieder%20des%20Begegnungsgartens%20Holtenser%20Berg%2C%20des%20Nachbarschaftsgartens%20am%20Helmsgrund%2C%20des%20JANUN-Gartens%20und%20weiteren%20G%F6ttinger%20Gemeinschaftsg%E4rten%2C%20organisieren%20in%20diesem%20Rahmen%20eine%20Fahrradtour%20durch%20die%20markierte%20Gemeinschaftsg%E4rten%20am%2019.06.%2C%20um%20gemeinsam%20mit%20ihren%20Mitgliedern%20ihre%20G%E4rten%20und%20Projekte%20kennenzulernen.","descriptionButtonShowText":"Informationen und Hilfe zur Karte anzeigen","descriptionButtonHideText":"Informationen und Hilfe zur Karte verstecken","audioPlayImage":"http://www.comapp-online.de/osm3/shared/img/play.png","audioStopImage":"http://www.comapp-online.de/osm3/shared/img/stop.png","audioDownloadImage":"http://www.comapp-online.de/osm3/shared/img/download.png","geoDownloadImage":"http://www.comapp-online.de/osm3/shared/img/geo.png","lon":9.9144928303115,"lat":51.539095737034,"zoom":12,"panzoombar":1,"permalinkchk":1,"scaleline":1,"showPopupOnHover":true,"markers":[{"markerName":"Albanigarten","markerLon":9.939782899623038,"markerLat":51.533215871715555,"markerIconImage":11,"markerContent":"Albanigarten"},{"markerName":"Friedensgarten","markerLon":9.890816436987295,"markerLat":51.52349596649495,"markerIconImage":11,"markerContent":"Friedensgarten%0A","markerNameLink":"http://internationale-gaerten.de/"},{"markerName":"Begegnungsgarten%20Holtenser%20Berg","markerLon":9.899878011992284,"markerLat":51.56174936842896,"markerIconImage":11,"markerContent":"Begegnungsgarten%20Holtenser%20Berg%0A","markerNameLink":"https://garten-hoberg.de/"},{"markerName":"Offener%20Nachbarschaftsgarten%20Helmsgrund","markerLon":9.97280727510764,"markerLat":51.50938462744976,"markerIconImage":11,"markerContent":"Offener%20Nachbarschaftsgarten%20Helmsgrund","markerNameLink":"https://helmsgrund.goettingen-im-wandel.de/"},{"markerName":"JANUN-Garten","markerLon":9.890844332030456,"markerLat":51.52392920026962,"markerIconImage":11,"markerContent":"JANUN-Garten","markerNameLink":"http://www.janun-goettingen.de/gartengruppe/"},{"markerName":"Internationale%20G%E4rten%20-%20Geismar","markerLon":9.970398651411763,"markerLat":51.512532282514,"markerIconImage":11,"markerContent":"Internationale%20G%E4rten%20-%20Geismar","markerNameLink":"http://internationale-gaerten.de/"}],"requiredField":"Dieses Feld muss ausgefüllt werden."};
+			// ********** - comapp - mapGenerator jsonData - end - ************ //
+			$.fn.getJsonData = function() {
+				return json;
+			};
+			$('body').mapGeneratorModel('initVal');
+			$('body').mapGeneratorMap('buildMap');
+			$('body').mapGeneratorMap('setBaseMode');
+		})(window.jQuery);
+		
+		
+		if (!window.console) console = {
+			log: function() {},
+			info: function() {},
+			warn: function() {},
+			error: function() {},
+			debug: function() {}
+		};
+		function setFlashStatus() {
+			$('body').mapGeneratorModel('setFlashStatus',true);
+		}
+	</script>
+	<script type="text/javascript" src="http://mediensyndikat.de/geo/generator2.js"></script>
+</body>
+</html>
